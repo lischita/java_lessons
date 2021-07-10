@@ -8,12 +8,19 @@ public class First_pro {
     Sqare r=new Sqare(10);
     PointOne point_1=new PointOne(5,5);
     PointOne point_2=new PointOne(11,15);
+    PointThree point3_1=new PointThree (5,5);
+    PointThree point3_2=new PointThree (11,15);
     print ("Результат работы функции","");
     print ("Точка1: с координатой X="+point_1.x," и  Y="+point_1.y);
     print ("Точка2: с координатой X="+point_2.x," и  Y="+point_2.y);
     print ("Расстояние между точкой 1 и 2 =", " "+ distance(point_1,point_2));
 
-    PointTwo pointtwo=new PointTwo(7,7,10,10);
+    print ("Результат работы метода","");
+    print ("Точка1: с координатой X="+point3_1.x," и  Y="+point3_1.y);
+    print ("Точка2: с координатой X="+point3_2.x," и  Y="+point3_2.y);
+    print ("Расстояние между точкой 1 и 2 =", " "+ point3_1.distance(point3_2));
+
+    /*PointTwo pointtwo=new PointTwo(7,7,10,10);
     print ("Результат работы метода","");
     print ("Точка1: с координатой X="+pointtwo.x1," и  Y="+pointtwo.y1);
     print ("Точка2: с координатой X="+pointtwo.x2," и  Y="+pointtwo.y2);
@@ -21,7 +28,7 @@ public class First_pro {
 
 
     print (string_1,string_2);
-    System.out.println ("Площадь квадрата со стороной " + r.l+" равна "+ r.aria());
+    System.out.println ("Площадь квадрата со стороной " + r.l+" равна "+ r.aria());*/
 
   }
   public static void print(String s_1,String s_2)
