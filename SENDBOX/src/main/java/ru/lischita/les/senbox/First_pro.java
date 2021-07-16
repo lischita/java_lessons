@@ -10,6 +10,8 @@ public class First_pro {
     PointOne point_2=new PointOne(11,15);
     PointThree point3_1=new PointThree (5,5);
     PointThree point3_2=new PointThree (11,15);
+    MyNewGui   out = new MyNewGui ();
+
     print ("Результат работы функции","");
     print ("Точка1: с координатой X="+point_1.x," и  Y="+point_1.y);
     print ("Точка2: с координатой X="+point_2.x," и  Y="+point_2.y);
@@ -19,6 +21,11 @@ public class First_pro {
     print ("Точка1: с координатой X="+point3_1.x," и  Y="+point3_1.y);
     print ("Точка2: с координатой X="+point3_2.x," и  Y="+point3_2.y);
     print ("Расстояние между точкой 1 и 2 =", " "+ point3_1.distance(point3_2));
+
+
+   // out.addPointinfo(point3_1);
+    //out.addPointinfo(point3_2);
+    //out.addPointinfo(point3_1.distance(point3_2));
 
     /*PointTwo pointtwo=new PointTwo(7,7,10,10);
     print ("Результат работы метода","");
