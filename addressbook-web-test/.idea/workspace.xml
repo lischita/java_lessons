@@ -52,15 +52,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="ru.lischita.les.addressbook.appmanager" />
       <recent name="ru.lischita.les.addressbook" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GroupDeletionTest">
+  <component name="RunManager" selected="TestNG.GroupCreationTests">
     <configuration name="ContactCreationTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.lischita.les.addressbook.*" />
+          <option name="PATTERN" value="ru.lischita.les.addressbook.appmanager.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -77,12 +78,12 @@
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.lischita.les.addressbook.*" />
+          <option name="PATTERN" value="ru.lischita.les.addressbook.appmanager.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.GroupCreationTests" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.GroupCreationTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -94,12 +95,12 @@
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.lischita.les.addressbook.*" />
+          <option name="PATTERN" value="ru.lischita.les.addressbook.appmanager.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.GroupDeletionTest" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.GroupDeletionTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -109,9 +110,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GroupCreationTests" />
         <item itemvalue="TestNG.GroupDeletionTest" />
         <item itemvalue="TestNG.ContactCreationTests" />
-        <item itemvalue="TestNG.GroupCreationTests" />
       </list>
     </recent_temporary>
   </component>
