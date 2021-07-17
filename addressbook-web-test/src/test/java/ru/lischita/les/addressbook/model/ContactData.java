@@ -1,4 +1,4 @@
-package ru.lischita.les.addressbook;
+package ru.lischita.les.addressbook.model;
 
 public class ContactData {
   private final String name;
