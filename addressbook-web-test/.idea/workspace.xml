@@ -55,9 +55,45 @@
       <recent name="ru.lischita.les.addressbook.appmanager" />
       <recent name="ru.lischita.les.addressbook" />
     </key>
+      <recent name="ru.lischita.les.addressbook.model" />
+    </key>
   </component>
-  <component name="RunManager" selected="TestNG.GroupCreationTests">
+  <component name="RunManager" selected="TestNG.ContactCreationTests_1">
     <configuration name="ContactCreationTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-test.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.lischita.les.addressbook.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.ContactCreationTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContactCreationTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-test.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.lischita.les.addressbook.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.ContactCreationTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContactCreationTests_1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
         <pattern>
@@ -66,7 +102,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.ContactCreationTests" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.ContactCreationTests_1" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -108,11 +144,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="cc" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-test.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.lischita.les.addressbook.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.cc" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ContactCreationTests_1" />
+        <item itemvalue="TestNG.ContactCreationTests (1)" />
+        <item itemvalue="TestNG.ContactCreationTests (1)" />
+        <item itemvalue="TestNG.cc" />
         <item itemvalue="TestNG.GroupCreationTests" />
-        <item itemvalue="TestNG.GroupDeletionTest" />
-        <item itemvalue="TestNG.ContactCreationTests" />
       </list>
     </recent_temporary>
   </component>
