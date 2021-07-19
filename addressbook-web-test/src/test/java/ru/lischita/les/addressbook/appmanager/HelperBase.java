@@ -29,6 +29,9 @@ public class HelperBase {
     click (locator);
   }
 
+  protected void closealertwindow(){
+  wd.switchTo().alert().accept();}
+
   public boolean isAlertPresent() {
     try {
       wd.switchTo().alert();

@@ -1,8 +1,10 @@
 package ru.lischita.les.addressbook.appmanager;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import ru.lischita.les.addressbook.model.ContactData;
+
 
 public class ContactHelper extends HelperBase {
 
@@ -38,4 +40,24 @@ public class ContactHelper extends HelperBase {
     click(By.linkText("add new"));
   }
 
+  public void selectContact() {
+    click(By.name("selected[]"));
+  }
+
+  public void deleteSelectionContact() {
+    click(By.xpath("//input[@value='Delete']"));
+  }
+
+  public void confirmContactDeletion() {
+    wd.switchTo().alert().accept();
+  }
+
+  public void initEditContact() {
+    click(By.xpath("//img[@alt='Edit']"));
+  }
+
+  public void submitEditForm() {
+    click(By.xpath("//div[@id='content']/form/input[22]"));
+  }
 }
+
