@@ -23,7 +23,7 @@ public class First_pro {
     print ("Расстояние между точкой 1 и 2 =", " "+ point3_1.distance(point3_2));
 
 
-   // out.addPointinfo(point3_1);
+    //out.addPointinfo(point3_1);
     //out.addPointinfo(point3_2);
     //out.addPointinfo(point3_1.distance(point3_2));
 
