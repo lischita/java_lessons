@@ -2,7 +2,9 @@ package ru.lischita.les.addressbook.appmanager;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import ru.lischita.les.addressbook.model.ContactData;
 
 
@@ -16,7 +18,7 @@ public class ContactHelper extends HelperBase {
     click(By.xpath("//div[@id='content']/form/input[21]"));
   }
 
-  public void fillContactForm(ContactData contactData) {
+  public void fillContactForm(ContactData contactData, boolean creation) {
     type(By.name("firstname"), contactData.getName());
     type(By.name("middlename"), contactData.getMiddlename());
     type(By.name("lastname"), contactData.getLastname());
@@ -32,6 +34,10 @@ public class ContactHelper extends HelperBase {
     select(By.name("bmonth"), contactData.getBmonth());
 
     type(By.name("byear"), contactData.getByear());
+
+    if (creation){select(By.name("new_group"), contactData.getGroup());}
+    else { Assert.assertFalse(IsElementPresent(By.name("new_group")));}
+
     type(By.name("phone2"), contactData.getHomeaddress());
 
   }
