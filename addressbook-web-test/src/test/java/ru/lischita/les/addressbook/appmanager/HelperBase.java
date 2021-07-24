@@ -5,6 +5,7 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 
 public class HelperBase {
@@ -31,7 +32,12 @@ public class HelperBase {
 
   protected void select (By locator,String text) {
     click (locator);
-    new Select(wd.findElement(locator)).selectByVisibleText(text);
+    if (text!=null) {
+      String existingText = wd.findElement(locator).getAttribute("value");
+      if (!text.equals(existingText)) {
+        new Select(wd.findElement(locator)).selectByVisibleText(text);
+      }
+    }
     click (locator);
   }
 

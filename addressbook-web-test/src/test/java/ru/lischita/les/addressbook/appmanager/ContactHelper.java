@@ -6,6 +6,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import ru.lischita.les.addressbook.model.ContactData;
+import ru.lischita.les.addressbook.model.GroupData;
 
 
 public class ContactHelper extends HelperBase {
@@ -64,6 +65,17 @@ public class ContactHelper extends HelperBase {
 
   public void submitEditForm() {
     click(By.xpath("//div[@id='content']/form/input[22]"));
+  }
+
+  public void crateContact(ContactData group) {
+    initContactCreation();
+    fillContactForm(group,true);
+    submitContacform();
+
+  }
+
+  public boolean isAThereContact() {
+    return IsElementPresent(By.name("selected[]"));
   }
 }
 
