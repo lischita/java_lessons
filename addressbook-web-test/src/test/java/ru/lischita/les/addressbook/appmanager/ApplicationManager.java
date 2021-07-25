@@ -30,7 +30,7 @@ public class ApplicationManager {
     else if(browser.equals(BrowserType.IE)) {
      System.setProperty("webdriver.ie.driver", "C:\\Users\\Елизавета Криворучка\\Desktop\\world\\IEDriverServer.exe");
        wd = new InternetExplorerDriver();
-       //wd.manage().window().minimize();
+       wd.manage().window().maximize();
     }
     //driver = new FirefoxDriver();
    // wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
