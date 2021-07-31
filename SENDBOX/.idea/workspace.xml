@@ -25,6 +25,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1vkcoCBB7n8v0w7nsF2KcES2EQ9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -37,9 +45,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../addressbook-web-test" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunManager" selected="TestNG.EquationTest">
-    <configuration name="First_pro" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.senbox.First_pro" />
+  <component name="RunManager" selected="Application.Collections">
+    <configuration name="Collections" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.senbox.Collections" />
       <module name="SENDBOX.main" />
       <extension name="coverage">
         <pattern>
@@ -102,12 +110,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PrimeTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SENDBOX.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.lischita.les.senbox.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.lischita.les.senbox" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.senbox.PrimeTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Collections" />
+        <item itemvalue="TestNG.PrimeTests" />
         <item itemvalue="TestNG.EquationTest" />
         <item itemvalue="Gradle.EquationTest" />
         <item itemvalue="Application.Gui" />
-        <item itemvalue="Application.First_pro" />
       </list>
     </recent_temporary>
   </component>
