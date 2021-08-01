@@ -1,12 +1,12 @@
 package ru.lischita.les.addressbook.appmanager;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.testng.Assert;
 import ru.lischita.les.addressbook.model.ContactData;
 import ru.lischita.les.addressbook.model.GroupData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ContactHelper extends HelperBase {
@@ -47,8 +47,9 @@ public class ContactHelper extends HelperBase {
     click(By.linkText("add new"));
   }
 
-  public void selectContact() {
-    click(By.name("selected[]"));
+  public void selectContact(int index) {
+    wd.findElements(By.name("selected[]")).get(index).click();
+//    click(By.name("selected[]"));
   }
 
   public void deleteSelectionContact() {
@@ -59,8 +60,12 @@ public class ContactHelper extends HelperBase {
     wd.switchTo().alert().accept();
   }
 
-  public void initEditContact() {
-    click(By.xpath("//img[@alt='Edit']"));
+  public void initEditContact(int index) {
+   // int count=index+2;
+   // click(By.xpath("//*[@id=\"maintable\"]/tbody/tr["+count+"]/td[8]/a/img"));
+    wd.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
+ //   click(By.xpath("//img[@alt='Edit']"));
+
   }
 
   public void submitEditForm() {
@@ -76,6 +81,23 @@ public class ContactHelper extends HelperBase {
 
   public boolean isAThereContact() {
     return IsElementPresent(By.name("selected[]"));
+  }
+
+  public List<ContactData> getContactList()
+  { String name=null;
+    String lastname=null;
+    int i=2;
+    List<ContactData> groups=new ArrayList<ContactData>();
+    List<WebElement> elements = wd.findElements(By.name("selected[]"));
+    for(WebElement element:elements){
+        name= element.findElement(By.xpath("//*[@id=\"maintable\"]/tbody/tr["+i+"]/td[3]")).getText();
+        lastname = element.findElement(By.xpath("//*[@id=\"maintable\"]/tbody/tr["+i+"]/td[2]")).getText();
+        int id=Integer.parseInt(element.findElement(By.xpath("//*[@id=\"maintable\"]/tbody/tr["+i+"]/td[1]/input")).getAttribute("value"));
+        ContactData group = new ContactData(id, name, null, lastname, null, null, null, null, null, null, null, null, null, null, null, null);
+        groups.add(group);
+         i++;
+      }
+    return groups;
   }
 }
 
