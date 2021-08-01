@@ -125,8 +125,22 @@ public class ContactData {
   @Override
   public String toString() {
     return "ContactData{" +
-            "name='" + name + '\'' +
+            "id=" + id +
+            ", name='" + name + '\'' +
             ", middlename='" + middlename + '\'' +
+            ", lastname='" + lastname + '\'' +
+            ", nickname='" + nickname + '\'' +
+            ", title='" + title + '\'' +
+            ", company='" + company + '\'' +
+            ", address='" + address + '\'' +
+            ", homephone='" + homephone + '\'' +
+            ", mobilephone='" + mobilephone + '\'' +
+            ", email='" + email + '\'' +
+            ", bday='" + bday + '\'' +
+            ", bmonth='" + bmonth + '\'' +
+            ", byear='" + byear + '\'' +
+            ", group='" + group + '\'' +
+            ", homeaddress='" + homeaddress + '\'' +
             '}';
   }
 

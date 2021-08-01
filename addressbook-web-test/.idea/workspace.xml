@@ -132,8 +132,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.ContactEditTest" />
-        <item itemvalue="TestNG.GroupModificationTests" />
         <item itemvalue="TestNG.ContactCreationTests" />
+        <item itemvalue="TestNG.GroupModificationTests" />
         <item itemvalue="TestNG.ContactDeleteTest" />
         <item itemvalue="TestNG.GroupDeletionTest" />
       </list>
@@ -149,5 +149,16 @@
       <updated>1626522059052</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ru/lischita/les/addressbook/appmanager/ContactHelper.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
