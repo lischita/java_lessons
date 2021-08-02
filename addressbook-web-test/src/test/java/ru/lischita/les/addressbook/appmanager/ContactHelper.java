@@ -83,7 +83,7 @@ public class ContactHelper extends HelperBase {
     return IsElementPresent(By.name("selected[]"));
   }
 
-  public List<ContactData> getContactList()
+  /*public List<ContactData> getContactList()
   { String name=null;
     String lastname=null;
     int i=2;
@@ -97,6 +97,20 @@ public class ContactHelper extends HelperBase {
         groups.add(group);
          i++;
       }
+    return groups;
+  }*/
+
+  public List<ContactData> getContactList()
+  { List<ContactData> groups=new ArrayList<ContactData>();
+    List<WebElement> elements = wd.findElements(By.name("entry"));
+    for(WebElement element:elements) {
+        List <WebElement> cells=element.findElements(By.tagName("td"));
+        String name = cells.get(2).getText();
+        String lastname = cells.get(1).getText();
+        int id = Integer.parseInt(element.findElement(By.cssSelector("input")).getAttribute("value"));
+        ContactData group = new ContactData(id, name, null, lastname, null, null, null, null, null, null, null, null, null, null, null, null);
+        groups.add(group);
+    }
     return groups;
   }
 }

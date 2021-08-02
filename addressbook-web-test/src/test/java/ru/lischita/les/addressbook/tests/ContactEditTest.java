@@ -20,7 +20,7 @@ public class ContactEditTest extends TestBase {
     app.getNavigationHelper().gotoHomePage();
     List<ContactData> before=app.getContactHelper().getContactList();
     app.getContactHelper().initEditContact((before.size()-1));
-    ContactData group =new ContactData(before.get(before.size()-1).getId(),"Петр", null, "Олегов", null, null, null, null, null, null, null, null,null,null,null,null);
+    ContactData group =new ContactData(before.get(before.size()-1).getId(),"Яков", null, "Ронинсон", null, null, null, null, null, null, null, null,null,null,null,null);
     app.getContactHelper().fillContactForm(group,false);
     app.getContactHelper().submitEditForm();
     app.getNavigationHelper().gotoHomePage();
