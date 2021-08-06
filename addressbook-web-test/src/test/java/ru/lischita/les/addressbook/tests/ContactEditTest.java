@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ContactEditTest extends TestBase {
 
-  @Test
+  @Test (enabled = false)
   public void testContactEdit() {
     app.getNavigationHelper().gotoHomePage();
    if(!app.getContactHelper().isAThereContact())
