@@ -4,7 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.lischita.les.addressbook.model.GroupData;
+import ru.lischita.les.addressbook.model.Groups;
 
+import java.security.acl.Group;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -104,7 +106,7 @@ public class GroupHelper extends HelperBase{
 
   }
 
-  public Set<GroupData> all() {
+ /* public Set<GroupData> all() {
     Set<GroupData> groups=new HashSet<GroupData>();
     List<WebElement> elements=wd.findElements(By.cssSelector("span.group"));
     for(WebElement element:elements){
@@ -115,7 +117,17 @@ public class GroupHelper extends HelperBase{
     return groups;
 
   }
-
+*/
+ public Groups all() {
+   Groups groups=new Groups();
+   List<WebElement> elements=wd.findElements(By.cssSelector("span.group"));
+   for(WebElement element:elements){
+     String name=element.getText();
+     int id=Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+     groups.add(new GroupData().withId(id).withName(name));
+   }
+   return groups;
+ }
 
 
 }
