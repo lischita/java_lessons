@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Set;
 
 public class GroupHelper extends HelperBase{
+
   public GroupHelper(WebDriver wd) {
     super(wd);
   }
@@ -74,7 +75,7 @@ public class GroupHelper extends HelperBase{
     returntoGroupPage();
   }
 
-  public  void delete(int index) {
+  public void delete(int index) {
     selectGroup(index);
     deletedSelectedGroups();
     returntoGroupPage();
@@ -128,6 +129,5 @@ public class GroupHelper extends HelperBase{
    }
    return groups;
  }
-
 
 }

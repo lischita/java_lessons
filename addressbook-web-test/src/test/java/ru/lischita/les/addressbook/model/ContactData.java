@@ -3,24 +3,24 @@ package ru.lischita.les.addressbook.model;
 import java.util.Objects;
 
 public class ContactData {
-  private int id;
-  private final String name;
-  private final String middlename;
-  private final String lastname;
-  private final String nickname;
-  private final String title;
-  private final String company;
-  private final String address;
-  private final String homephone;
-  private final String mobilephone;
-  private final String email;
-  private final String bday;
-  private final String bmonth;
-  private final String byear;
-  private final String group;
-  private final String homeaddress;
+  private int id=Integer.MAX_VALUE;;
+  private  String name;
+  private  String middlename;
+  private  String lastname;
+  private  String nickname;
+  private  String title;
+  private  String company;
+  private  String address;
+  private  String homephone;
+  private  String mobilephone;
+  private  String email;
+  private  String bday;
+  private  String bmonth;
+  private  String byear;
+  private  String group;
+  private  String homeaddress;
 
-  public ContactData(int id,String name, String middlename, String lastname, String nickname, String title, String company, String address, String homephone, String mobilephone, String email, String bday, String bmonth, String byear, String group, String homeaddress) {
+  /*public ContactData(int id,String name, String middlename, String lastname, String nickname, String title, String company, String address, String homephone, String mobilephone, String email, String bday, String bmonth, String byear, String group, String homeaddress) {
     this.id=id;
     this.name = name;
     this.middlename = middlename;
@@ -57,7 +57,8 @@ public class ContactData {
     this.byear = byear;
     this.group = group ;
     this.homeaddress = homeaddress;
-  }
+  }*/
+
   public int getId() {
     return id;
   }
@@ -122,6 +123,100 @@ public class ContactData {
     return homeaddress;
   }
 
+  public ContactData withId(int id) {
+    this.id = id;
+    return this;
+  }
+
+  public ContactData withName(String name) {
+    this.name = name;
+    return this;
+  }
+
+  public ContactData withMiddlename(String middlename) {
+    this.middlename = middlename;
+    return this;
+  }
+
+  public ContactData withLastname(String lastname) {
+    this.lastname = lastname;
+    return this;
+  }
+
+  public ContactData withNickname(String nickname) {
+    this.nickname = nickname;
+    return this;
+  }
+
+  public ContactData withTitle(String title) {
+    this.title = title;
+    return this;
+  }
+
+  public ContactData withCompany(String company) {
+    this.company = company;
+    return this;
+  }
+
+  public ContactData withAddress(String address) {
+    this.address = address;
+    return this;
+  }
+
+  public ContactData withHomephone(String homephone) {
+    this.homephone = homephone;
+    return this;
+  }
+
+  public ContactData withMobilephone(String mobilephone) {
+    this.mobilephone = mobilephone;
+    return this;
+  }
+
+  public ContactData withEmail(String email) {
+    this.email = email;
+    return this;
+  }
+
+  public ContactData withBday(String bday) {
+    this.bday = bday;
+    return this;
+  }
+
+  public ContactData withBmonth(String bmonth) {
+    this.bmonth = bmonth;
+    return this;
+  }
+
+  public ContactData withByear(String byear) {
+    this.byear = byear;
+    return this;
+  }
+
+  public ContactData withGroup(String group) {
+    this.group = group;
+    return this;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    ContactData that = (ContactData) o;
+    return id == that.id && Objects.equals(name, that.name) && Objects.equals(lastname, that.lastname);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, name, lastname);
+  }
+
+  public ContactData withHomeaddress(String homeaddress) {
+    this.homeaddress = homeaddress;
+    return this;
+  }
+
+
   @Override
   public String toString() {
     return "ContactData{" +
@@ -142,20 +237,6 @@ public class ContactData {
             ", group='" + group + '\'' +
             ", homeaddress='" + homeaddress + '\'' +
             '}';
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    ContactData that = (ContactData) o;
-    return Objects.equals(name, that.name) && Objects.equals(lastname, that.lastname);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(name, lastname);
   }
 
 

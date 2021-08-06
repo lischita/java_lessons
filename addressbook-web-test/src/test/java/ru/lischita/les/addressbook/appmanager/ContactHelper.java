@@ -3,6 +3,7 @@ package ru.lischita.les.addressbook.appmanager;
 import org.openqa.selenium.*;
 import org.testng.Assert;
 import ru.lischita.les.addressbook.model.ContactData;
+import ru.lischita.les.addressbook.model.Contacts;
 import ru.lischita.les.addressbook.model.GroupData;
 
 import java.util.ArrayList;
@@ -52,7 +53,11 @@ public class ContactHelper extends HelperBase {
 //    click(By.name("selected[]"));
   }
 
-  public void deleteSelectionContact() {
+  public void selectContactById(int id) {
+    wd.findElement(By.cssSelector("input[value='"+id+"']")).click();
+  }
+
+  public void deleteContact() {
     click(By.xpath("//input[@value='Delete']"));
   }
 
@@ -72,12 +77,20 @@ public class ContactHelper extends HelperBase {
     click(By.xpath("//div[@id='content']/form/input[22]"));
   }
 
-  public void crateContact(ContactData group) {
+  public void crate(ContactData group) {
     initContactCreation();
     fillContactForm(group,true);
     submitContacform();
-
   }
+
+  public void delete(ContactData contact) {
+    selectContactById(contact.getId());
+    deleteContact();
+    confirmContactDeletion();
+ }
+
+
+
 
   public boolean isAThereContact() {
     return IsElementPresent(By.name("selected[]"));
@@ -100,7 +113,7 @@ public class ContactHelper extends HelperBase {
     return groups;
   }*/
 
-  public List<ContactData> getContactList()
+ /* public List<ContactData> getContactList()
   { List<ContactData> groups=new ArrayList<ContactData>();
     List<WebElement> elements = wd.findElements(By.name("entry"));
     for(WebElement element:elements) {
@@ -109,9 +122,26 @@ public class ContactHelper extends HelperBase {
         String lastname = cells.get(1).getText();
         int id = Integer.parseInt(element.findElement(By.cssSelector("input")).getAttribute("value"));
         ContactData group = new ContactData(id, name, null, lastname, null, null, null, null, null, null, null, null, null, null, null, null);
-        groups.add(group);
+        //groups.add(group);
     }
     return groups;
+  }*/
+
+  public Contacts all()
+  {
+    Contacts contacts=new Contacts();
+    List<WebElement> elements = wd.findElements(By.name("entry"));
+    for(WebElement element:elements) {
+      List <WebElement> cells=element.findElements(By.tagName("td"));
+      String name = cells.get(2).getText();
+      String lastname = cells.get(1).getText();
+      int id = Integer.parseInt(element.findElement(By.cssSelector("input")).getAttribute("value"));
+      ContactData contact = new ContactData().withId(id).withName(name).withLastname(lastname);
+      contacts.add(contact);
+    }
+    return contacts;
+
   }
+
 }
 

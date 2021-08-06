@@ -1,30 +1,40 @@
 package ru.lischita.les.addressbook.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.lischita.les.addressbook.model.ContactData;
+import ru.lischita.les.addressbook.model.Contacts;
 
-import java.util.List;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 
 public class ContactDeleteTest extends TestBase{
 
-  @Test (enabled = false)
+  @BeforeMethod
+  public void ensurePreconditions(){
+    if(!app.contact().isAThereContact())
+    {
+      app.contact().crate(new ContactData().withName("Дмитрий").withMiddlename("Тестович").withLastname("Петрович").withNickname("Тестер").withTitle("Тестировщик").withCompany("Тест-Комплект").withAddress("г.Москва Тестовая дом 13").withHomephone("8-495-123-56-78").withMobilephone("8-976-456-67-87").withEmail("test@test_complect.ru").withBday("11").withBmonth("May").withByear("1980").withGroup("test1").withHomeaddress("г. Москва, ул. Тестиррования  дом 13"));
+    }
+  }
+
+  @Test
   public void testContactDelete()
   {
-     if(!app.getContactHelper().isAThereContact())
-    {
-      app.getContactHelper().crateContact(new ContactData("Дмитрий", "Тестович", "Петрович", "Тестер", "Тестировщик","Тест-Комплект", "г.Москва Тестовая дом 13", "8-495-123-56-78", "8-976-456-67-87", "test@test_complect.ru", "11", "May", "1980","test1" ,"г. Москва, ул. Тестиррования  дом 13"));
-    }
-    app.goTo().gotoHomePage();
-    List<ContactData> before=app.getContactHelper().getContactList();
-    app.getContactHelper().selectContact(before.size()-1);
-    app.getContactHelper().deleteSelectionContact();
-    app.getContactHelper().confirmContactDeletion();
-    app.goTo().gotoHomePage();
-    List<ContactData> after=app.getContactHelper().getContactList();
+    app.goTo().HomePage();
+    //List<ContactData> before=app.contact().getContactList();
+    Contacts before=app.contact().all();
+    ContactData contactGroup=before.iterator().next();
+    app.contact().delete(contactGroup);
+    app.goTo().HomePage();
+    Contacts after=app.contact().all();
     Assert.assertEquals(after.size(),before.size()-1);
-    before.remove(before.size()-1);
-    Assert.assertEquals(after,before);
+    assertThat(after,equalTo(before.withOut(contactGroup)));
 
   }
+
 }
+
+
