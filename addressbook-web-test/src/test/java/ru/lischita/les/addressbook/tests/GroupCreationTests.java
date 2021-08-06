@@ -5,6 +5,7 @@ import ru.lischita.les.addressbook.model.GroupData;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 
 public class GroupCreationTests extends TestBase {
 
@@ -12,12 +13,14 @@ public class GroupCreationTests extends TestBase {
   public void testGroupCreation() throws Exception {
 
     app.goTo().groupPage();
-    List<GroupData> before=app.group().list();
+   // List<GroupData> before=app.group().list();
+    Set<GroupData> before=app.group().all();
     //int before=app.getGroupHelper().getGroupCount();
     // GroupData group=new GroupData("test1", "test2", "test3");
     GroupData group=new GroupData().withName("test1").withFooter("test2").withHeader("test3");
     app.group().create(group);
-    List<GroupData> after=app.group().list();
+    //List<GroupData> after=app.group().list();
+    Set<GroupData> after=app.group().all();
     Assert.assertEquals(after.size(),before.size()+1);
     /*int max=0;
     for (GroupData g:after){
@@ -28,10 +31,12 @@ public class GroupCreationTests extends TestBase {
     before.add(group);
         Assert.assertEquals(new HashSet<Object>(after),new HashSet<Object>(before));
     */
+
+    group.withId(after.stream().mapToInt((g)->g.getId()).max().getAsInt());
     before.add(group);
-    Comparator<? super GroupData> byId=(g1,g2)->Integer.compare(g1.getId(), g2.getId());
-    before.sort(byId);
-    after.sort(byId);
+    //Comparator<? super GroupData> byId=(g1,g2)->Integer.compare(g1.getId(), g2.getId());
+    //before.sort(byId);
+    //after.sort(byId);
     Assert.assertEquals(after,before);
   }
 
