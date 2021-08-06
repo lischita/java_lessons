@@ -9,7 +9,7 @@ public class NavigationHelper extends HelperBase{
     super(wd);
   }
 
-  public void goToGroupPage() {
+  public void groupPage() {
     if(IsElementPresent(By.tagName("h1"))
             && wd.findElement(By.tagName("h1")).getText().equals("Groups")
             && IsElementPresent(By.name("new")))

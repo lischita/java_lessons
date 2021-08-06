@@ -12,18 +12,18 @@ public class ContactEditTest extends TestBase {
 
   @Test (enabled = false)
   public void testContactEdit() {
-    app.getNavigationHelper().gotoHomePage();
+    app.goTo().gotoHomePage();
    if(!app.getContactHelper().isAThereContact())
     {
      app.getContactHelper().crateContact(new ContactData("Дмитрий", "Тестович", "Петрович", "Тестер", "Тестировщик","Тест-Комплект", "г.Москва Тестовая дом 13", "8-495-123-56-78", "8-976-456-67-87", "test@test_complect.ru", "11", "May", "1980","test1" ,"г. Москва, ул. Тестиррования  дом 13"));
     }
-    app.getNavigationHelper().gotoHomePage();
+    app.goTo().gotoHomePage();
     List<ContactData> before=app.getContactHelper().getContactList();
     app.getContactHelper().initEditContact((before.size()-1));
     ContactData group =new ContactData(before.get(before.size()-1).getId(),"Яков", null, "Ронинсон", null, null, null, null, null, null, null, null,null,null,null,null);
     app.getContactHelper().fillContactForm(group,false);
     app.getContactHelper().submitEditForm();
-    app.getNavigationHelper().gotoHomePage();
+    app.goTo().gotoHomePage();
     List<ContactData> after=app.getContactHelper().getContactList();
      Assert.assertEquals(after.size(),before.size());
      before.remove(before.size()-1);
