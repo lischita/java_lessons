@@ -100,7 +100,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GroupDeletionTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GroupModificationTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
         <pattern>
@@ -109,7 +109,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.GroupDeletionTest" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.GroupModificationTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -138,8 +138,8 @@
         <item itemvalue="TestNG.ru.lischita.les.addressbook" />
         <item itemvalue="TestNG.ContactEditTest" />
         <item itemvalue="TestNG.ContactCreationTests" />
+        <item itemvalue="TestNG.GroupModificationTests" />
         <item itemvalue="TestNG.GroupCreationTests" />
-        <item itemvalue="TestNG.GroupDeletionTest" />
       </list>
     </recent_temporary>
   </component>
@@ -153,16 +153,5 @@
       <updated>1626522059052</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/ru/lischita/les/addressbook/tests/ContactEditTest.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

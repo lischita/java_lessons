@@ -24,25 +24,14 @@ public class ContactEditTest extends TestBase {
   public void testContactEdit()
   {
     app.goTo().HomePage();
-   // List<ContactData> before=app.contact().getContactList();
     Contacts before=app.contact().all();
-    //app.contact().initEditContact((before.size()-1));
     ContactData contactGroup=before.iterator().next();
     ContactData contact =new ContactData().withId(contactGroup.getId()).withName("Яков").withLastname("Ронинсон");
-    //app.contact().fillContactForm(group,false);
-   // app.contact().submitEditForm();
     app.contact().modify(contact);
     app.goTo().HomePage();
-    //List<ContactData> after=app.contact().getContactList();
     Contacts after=app.contact().all();
     Assert.assertEquals(after.size(),before.size());
-     //before.remove(before.size()-1);
-     //before.add(group);
-     //Comparator<? super ContactData> byId=(g1, g2)->Integer.compare(g1.getId(), g2.getId());
-     //before.sort(byId);
-     //after.sort(byId);
-     //Assert.assertEquals(after,before);
-     assertThat(after,equalTo(before.withOut(contactGroup).withAdded(contact)));
+    assertThat(after,equalTo(before.withOut(contactGroup).withAdded(contact)));
   }
 }
 
