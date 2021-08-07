@@ -4,6 +4,8 @@ import org.openqa.selenium.*;
 import org.testng.Assert;
 import ru.lischita.les.addressbook.model.ContactData;
 import ru.lischita.les.addressbook.model.Contacts;
+import ru.lischita.les.addressbook.model.Groups;
+
 import java.util.List;
 
 
@@ -79,17 +81,20 @@ public class ContactHelper extends HelperBase {
     initContactCreation();
     fillContactForm(contacts,true);
     submitContacform();
+    contactsCache=null;
   }
   public void modify(ContactData contacts) {
     initEditContact(contacts.getId());
     fillContactForm(contacts,false);
     submitEditForm();
+    contactsCache=null;
   }
 
   public void delete(ContactData contact) {
     selectContactById(contact.getId());
     deleteContact();
     confirmContactDeletion();
+    contactsCache=null;
  }
 
 
@@ -130,9 +135,12 @@ public class ContactHelper extends HelperBase {
     return groups;
   }*/
 
+  private Contacts contactsCache=null;
+
   public Contacts all()
   {
-    Contacts contacts=new Contacts();
+    if(contactsCache!=null) {return new Contacts(contactsCache);}
+    contactsCache=new Contacts();
     List<WebElement> elements = wd.findElements(By.name("entry"));
     for(WebElement element:elements) {
       List <WebElement> cells=element.findElements(By.tagName("td"));
@@ -140,9 +148,9 @@ public class ContactHelper extends HelperBase {
       String lastname = cells.get(1).getText();
       int id = Integer.parseInt(element.findElement(By.cssSelector("input")).getAttribute("value"));
       ContactData contact = new ContactData().withId(id).withName(name).withLastname(lastname);
-      contacts.add(contact);
+      contactsCache.add(contact);
     }
-    return contacts;
+    return new Contacts(contactsCache);
 
   }
 
