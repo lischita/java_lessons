@@ -4,9 +4,6 @@ import org.openqa.selenium.*;
 import org.testng.Assert;
 import ru.lischita.les.addressbook.model.ContactData;
 import ru.lischita.les.addressbook.model.Contacts;
-import ru.lischita.les.addressbook.model.GroupData;
-
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -65,10 +62,11 @@ public class ContactHelper extends HelperBase {
     wd.switchTo().alert().accept();
   }
 
-  public void initEditContact(int index) {
+  public void initEditContact(int id) {
    // int count=index+2;
    // click(By.xpath("//*[@id=\"maintable\"]/tbody/tr["+count+"]/td[8]/a/img"));
-    wd.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
+    //wd.findElements(By.xpath("//img[@alt='Edit']")).get(id).click();
+    wd.findElement(By.cssSelector("a[href='edit.php?id="+id+"']")).click();
  //   click(By.xpath("//img[@alt='Edit']"));
 
   }
@@ -77,10 +75,15 @@ public class ContactHelper extends HelperBase {
     click(By.xpath("//div[@id='content']/form/input[22]"));
   }
 
-  public void crate(ContactData group) {
+  public void crate(ContactData contacts) {
     initContactCreation();
-    fillContactForm(group,true);
+    fillContactForm(contacts,true);
     submitContacform();
+  }
+  public void modify(ContactData contacts) {
+    initEditContact(contacts.getId());
+    fillContactForm(contacts,false);
+    submitEditForm();
   }
 
   public void delete(ContactData contact) {
