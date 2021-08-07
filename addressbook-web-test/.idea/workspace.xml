@@ -48,7 +48,7 @@
       <recent name="ru.lischita.les.addressbook.model" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ru.lischita.les.addressbook">
+  <component name="RunManager" selected="TestNG.ContactEditTest">
     <configuration name="ContactCreationTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
@@ -135,8 +135,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.ru.lischita.les.addressbook" />
         <item itemvalue="TestNG.ContactEditTest" />
+        <item itemvalue="TestNG.ru.lischita.les.addressbook" />
         <item itemvalue="TestNG.ContactCreationTests" />
         <item itemvalue="TestNG.GroupModificationTests" />
         <item itemvalue="TestNG.GroupCreationTests" />

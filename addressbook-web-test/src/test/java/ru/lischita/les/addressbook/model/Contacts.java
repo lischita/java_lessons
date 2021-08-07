@@ -33,6 +33,12 @@ public class Contacts extends ForwardingSet<ContactData> {
     contacts.remove(contact);
     return contacts;
   }
+  public Contacts withModify(ContactData contactGroup, ContactData contact) {
+    Contacts contacts = new Contacts(this);
+    contacts.remove(contactGroup);
+    contacts.add(contact);
+    return contacts;
+  }
 
 }
 
