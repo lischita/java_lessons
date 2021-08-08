@@ -4,7 +4,6 @@ import org.openqa.selenium.*;
 import org.testng.Assert;
 import ru.lischita.les.addressbook.model.ContactData;
 import ru.lischita.les.addressbook.model.Contacts;
-import ru.lischita.les.addressbook.model.Groups;
 
 import java.util.List;
 
@@ -40,6 +39,7 @@ public class ContactHelper extends HelperBase {
     else { Assert.assertFalse(IsElementPresent(By.name("new_group")));}
 
     type(By.name("phone2"), contactData.getHomeaddress());
+    type(By.name("work"), contactData.getWorkphone());
 
   }
 
@@ -68,7 +68,7 @@ public class ContactHelper extends HelperBase {
    // int count=index+2;
    // click(By.xpath("//*[@id=\"maintable\"]/tbody/tr["+count+"]/td[8]/a/img"));
     //wd.findElements(By.xpath("//img[@alt='Edit']")).get(id).click();
-    wd.findElement(By.cssSelector("a[href='edit.php?id="+id+"']")).click();
+    wd.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s']",id))).click();
  //   click(By.xpath("//img[@alt='Edit']"));
 
   }
@@ -146,13 +146,29 @@ public class ContactHelper extends HelperBase {
       List <WebElement> cells=element.findElements(By.tagName("td"));
       String name = cells.get(2).getText();
       String lastname = cells.get(1).getText();
+      //String[] phones = cells.get(5).getText().split("\n");  Получаем данные из 6 столбца и разрезаем их
       int id = Integer.parseInt(element.findElement(By.cssSelector("input")).getAttribute("value"));
-      ContactData contact = new ContactData().withId(id).withName(name).withLastname(lastname);
+     // ContactData contact = new ContactData().withId(id).withName(name).withLastname(lastname).withHomephone(phones[0]).withMobilephone(phones[1]).withWorkphone(phones[2]);
+      // загружаем полученные части по телефонам
+      String allphones=cells.get(5).getText();
+      ContactData contact = new ContactData().withId(id).withName(name).withLastname(lastname).withAllphones(allphones);
       contactsCache.add(contact);
     }
     return new Contacts(contactsCache);
 
   }
 
+  public ContactData infoEditForm(ContactData contact)
+  {
+    initEditContact(contact.getId());
+    String name= wd.findElement(By.name("firstname")).getAttribute("value");
+    String lastname= wd.findElement(By.name("lastname")).getAttribute("value");
+    String home= wd.findElement(By.name("home")).getAttribute("value");
+    String mobile= wd.findElement(By.name("mobile")).getAttribute("value");
+    String work= wd.findElement(By.name("work")).getAttribute("value");
+    String homeaddress= wd.findElement(By.name("phone2")).getAttribute("value");
+    wd.navigate().back();
+    return new ContactData().withId(contact.getId()).withName(name).withLastname(lastname).withHomephone(home).withMobilephone(mobile).withWorkphone(work).withHomeaddress(homeaddress);
+  }
 }
 
