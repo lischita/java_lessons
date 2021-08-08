@@ -48,7 +48,7 @@
       <recent name="ru.lischita.les.addressbook.model" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ContactPhoneTest">
+  <component name="RunManager" selected="TestNG.ru.lischita.les.addressbook">
     <configuration name="ContactCreationTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
@@ -83,19 +83,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ru.lischita.les.addressbook.tests.ContactCreationTests and 5 more (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ru.lischita.les.addressbook" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
-      <option name="TEST_OBJECT" value="PATTERN" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.lischita.les.addressbook.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
       <properties />
       <listeners />
-      <patterns>
-        <pattern testClass="ru.lischita.les.addressbook.tests.ContactCreationTests" />
-        <pattern testClass="ru.lischita.les.addressbook.tests.ContactDeleteTest" />
-        <pattern testClass="ru.lischita.les.addressbook.tests.ContactEditTest" />
-        <pattern testClass="ru.lischita.les.addressbook.tests.GroupCreationTests" />
-        <pattern testClass="ru.lischita.les.addressbook.tests.GroupDeletionTest" />
-        <pattern testClass="ru.lischita.les.addressbook.tests.GroupModificationTests" />
-      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -136,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ru.lischita.les.addressbook" />
         <item itemvalue="TestNG.ContactPhoneTest" />
         <item itemvalue="TestNG.ContactCreationTests" />
         <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.ContactCreationTests and 5 more (3)" />
         <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.ContactCreationTests and 5 more (2)" />
-        <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.ContactCreationTests and 5 more (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -154,21 +153,5 @@
       <updated>1626522059052</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/ru/lischita/les/addressbook/tests/ContactCreationTests.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/ru/lischita/les/addressbook/tests/ContactPhoneTest.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
