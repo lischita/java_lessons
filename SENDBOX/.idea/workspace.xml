@@ -43,24 +43,26 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../addressbook-web-test" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.Collections">
-    <configuration name="Collections" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.senbox.Collections" />
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ru.lischita.les.senbox" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Applet.Odometr">
+    <configuration name="Odometr" type="Applet" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.senbox.Odometr" />
       <module name="SENDBOX.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.lischita.les.senbox.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Gui" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.senbox.Gui" />
+    <configuration name="Collections" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.senbox.Collections" />
       <module name="SENDBOX.main" />
       <extension name="coverage">
         <pattern>
@@ -129,11 +131,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Applet.Odometr" />
         <item itemvalue="Application.Collections" />
         <item itemvalue="TestNG.PrimeTests" />
         <item itemvalue="TestNG.EquationTest" />
         <item itemvalue="Gradle.EquationTest" />
-        <item itemvalue="Application.Gui" />
       </list>
     </recent_temporary>
   </component>
@@ -147,5 +149,9 @@
       <updated>1627109728436</updated>
     </task>
     <servers />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
