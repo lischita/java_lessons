@@ -45,8 +45,8 @@ public class HelperBase {
     if (text!=null) {
       String existingText = wd.findElement(locator).getAttribute("value");
       if (!text.equals(existingText)) {
-        new Select(wd.findElement(locator)).selectByVisibleText(text);
-      }
+    new Select(wd.findElement(locator)).selectByVisibleText(text);
+     }
     }
     click (locator);
   }

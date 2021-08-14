@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Дмитрий 0",
+    "middlename": "Тестович 0",
+    "lastname": "Петрович0",
+    "nickname": "Тестер0",
+    "title": "Тестировщик0",
+    "company": "Тест-Комплект0",
+    "address": "г.Москва Тестовая дом 13 0",
+    "homephone": "8-495-123-56-78 0",
+    "mobilephone": "8-976-456-67-87 0",
+    "workphone": "495-123-45-67 0",
+    "email": "test@test_complect.ru 0",
+    "bday": "11",
+    "bmonth": "May",
+    "byear": "1980",
+    "group": "test1",
+    "homeaddress": "г. Москва, ул. Тестиррования  дом 13 0",
+    "photo": {}
+  },
+  {
+    "name": "Дмитрий 1",
+    "middlename": "Тестович 1",
+    "lastname": "Петрович1",
+    "nickname": "Тестер1",
+    "title": "Тестировщик1",
+    "company": "Тест-Комплект1",
+    "address": "г.Москва Тестовая дом 13 1",
+    "homephone": "8-495-123-56-78 1",
+    "mobilephone": "8-976-456-67-87 1",
+    "workphone": "495-123-45-67 1",
+    "email": "test@test_complect.ru 1",
+    "bday": "11",
+    "bmonth": "May",
+    "byear": "1980",
+    "group": "test1",
+    "homeaddress": "г. Москва, ул. Тестиррования  дом 13 1",
+    "photo": {}
+  }
+]

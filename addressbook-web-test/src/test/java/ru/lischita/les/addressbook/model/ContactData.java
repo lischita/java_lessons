@@ -1,31 +1,58 @@
 package ru.lischita.les.addressbook.model;
 
+import com.google.gson.annotations.Expose;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
+
 import java.io.File;
 import java.util.Objects;
 
+@XStreamAlias("contact") // указываем что в xml использовать тег contact
 public class ContactData {
-  private int id=Integer.MAX_VALUE;;
+  @XStreamOmitField   // указываем что следующее поле не записывать в xml
+  private int id=Integer.MAX_VALUE;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String name;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String middlename;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String lastname;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String nickname;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String title;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String company;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String address;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String homephone;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String mobilephone;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String workphone;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String email;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String email2;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String email3;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String bday;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String bmonth;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String byear;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String group;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String homeaddress;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String allphones;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String allemails;
-  private File photo;
+  @Expose// указываем что это поле обязательно жолжно быть в json файле
+  private   File photo;
 
 
   /*public ContactData(int id,String name, String middlename, String lastname, String nickname, String title, String company, String address, String homephone, String mobilephone, String email, String bday, String bmonth, String byear, String group, String homeaddress) {

@@ -1,0 +1,40 @@
+<list>
+  <contact>
+    <name>Дмитрий 0</name>
+    <middlename>Тестович 0</middlename>
+    <lastname>Петрович0</lastname>
+    <nickname>Тестер0</nickname>
+    <title>Тестировщик0</title>
+    <company>Тест-Комплект0</company>
+    <address>г.Москва Тестовая дом 13 0</address>
+    <homephone>8-495-123-56-78 0</homephone>
+    <mobilephone>8-976-456-67-87 0</mobilephone>
+    <workphone>495-123-45-67 0</workphone>
+    <email>test@test_complect.ru 0</email>
+    <bday>11</bday>
+    <bmonth>May</bmonth>
+    <byear>1980</byear>
+    <group>test1</group>
+    <homeaddress>г. Москва, ул. Тестиррования  дом 13 0</homeaddress>
+    <photo>src\test\resurces\photo_0.jpg</photo>
+  </contact>
+  <contact>
+    <name>Дмитрий 1</name>
+    <middlename>Тестович 1</middlename>
+    <lastname>Петрович1</lastname>
+    <nickname>Тестер1</nickname>
+    <title>Тестировщик1</title>
+    <company>Тест-Комплект1</company>
+    <address>г.Москва Тестовая дом 13 1</address>
+    <homephone>8-495-123-56-78 1</homephone>
+    <mobilephone>8-976-456-67-87 1</mobilephone>
+    <workphone>495-123-45-67 1</workphone>
+    <email>test@test_complect.ru 1</email>
+    <bday>11</bday>
+    <bmonth>May</bmonth>
+    <byear>1980</byear>
+    <group>test1</group>
+    <homeaddress>г. Москва, ул. Тестиррования  дом 13 1</homeaddress>
+    <photo>src\test\resurces\photo_0.jpg</photo>
+  </contact>
+</list>
