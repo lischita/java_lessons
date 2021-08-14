@@ -57,13 +57,6 @@ public class GroupData {
     this.footer = footer;
     return this;
   }
-    @Override
-  public String toString() {
-    return "GroupData{" +
-            "id=" + id +
-            ", name='" + name + '\'' +
-            '}';
-  }
 
   @Override
   public boolean equals(Object o) {
@@ -71,6 +64,16 @@ public class GroupData {
     if (o == null || getClass() != o.getClass()) return false;
     GroupData groupData = (GroupData) o;
     return id == groupData.id && Objects.equals(name, groupData.name);
+  }
+
+  @Override
+  public String toString() {
+    return "GroupData{" +
+           // "id=" + id +
+            ", name='" + name + '\'' +
+            ", header='" + header + '\'' +
+            ", footer='" + footer + '\'' +
+            '}';
   }
 
   @Override
