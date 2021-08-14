@@ -1,12 +1,17 @@
 package ru.lischita.les.addressbook.tests;
+import com.thoughtworks.xstream.XStream;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import ru.lischita.les.addressbook.model.GroupData;
 import ru.lischita.les.addressbook.model.Groups;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -31,6 +36,39 @@ public class GroupCreationTests extends TestBase {
     return list.iterator();
   }
 
+  @DataProvider // читаем данные из файла csv
+  public Iterator<Object[]> validGroupsFromFileCSV() throws IOException {
+    List<Object[]> list=new ArrayList<Object[]>();
+    BufferedReader reader= new BufferedReader(new FileReader("src/test/resurces/groups.csv"));
+    String line = reader.readLine();
+    while (line !=null){
+      String[] split=line.split(";");
+      list.add (new Object[]{new GroupData().withName(split[0]).withHeader(split[1]).withFooter(split[2])});
+      line = reader.readLine();
+    }
+    return list.iterator();
+  }
+
+  @DataProvider // читаем данные из файла xml
+  public Iterator<Object[]> validGroupsFromFileXML() throws IOException {
+    BufferedReader reader= new BufferedReader(new FileReader("src/test/resurces/groups.xml"));
+    String xml="";
+    String line = reader.readLine();
+    while (line !=null){
+      xml+=line;
+      line = reader.readLine();
+    }
+    XStream xStream=new XStream();
+    xStream.processAnnotations(GroupData.class);
+    List<GroupData> groups= (List<GroupData>) xStream.fromXML(xml);
+    return groups.stream().map((g)->new Object[] {g}).collect(Collectors.toList()).iterator();
+
+
+  }
+
+
+
+
   @Test (enabled = false, dataProvider = "validGroups")// параметризованный тест на вход поступают данные их строк
   public void testGroupCreation(String name,String header, String footer) throws Exception
   {
@@ -44,8 +82,34 @@ public class GroupCreationTests extends TestBase {
     assertThat(after, equalTo(before.withAdded(group.withId(after.stream().mapToInt((g)->g.getId()).max().getAsInt()))));
   }
 
-  @Test (dataProvider = "validGroups_1")// параметризованный тест на вход поступают объекты
+  @Test (enabled = false,dataProvider = "validGroups_1")// параметризованный тест на вход поступают объекты
   public void testGroupCreation(GroupData group) throws Exception
+  {
+    app.goTo().groupPage();
+    Groups before=app.group().all();
+    app.group().create(group);
+    Groups after=app.group().all();
+    assertThat(after.size(),equalTo(before.size()+1));
+    Assert.assertEquals(before.withAdded(group.withId(after.stream().mapToInt((g)->g.getId()).max().getAsInt())).hashCode(),after.hashCode());
+    assertThat(after, equalTo(before.withAdded(group.withId(after.stream().mapToInt((g)->g.getId()).max().getAsInt()))));
+  }
+
+
+  @Test (dataProvider = "validGroupsFromFileXML")// параметризованный тест на вход поступают данные из файла xml
+  public void testGroupCreationFileXML(GroupData group) throws Exception
+  {
+    app.goTo().groupPage();
+    Groups before=app.group().all();
+    app.group().create(group);
+    Groups after=app.group().all();
+    assertThat(after.size(),equalTo(before.size()+1));
+    Assert.assertEquals(before.withAdded(group.withId(after.stream().mapToInt((g)->g.getId()).max().getAsInt())).hashCode(),after.hashCode());
+    assertThat(after, equalTo(before.withAdded(group.withId(after.stream().mapToInt((g)->g.getId()).max().getAsInt()))));
+  }
+
+
+  @Test (enabled = false, dataProvider = "validGroupsFromFileCSV")// параметризованный тест на вход поступают данные из файла csv
+  public void testGroupCreationFileCSV(GroupData group) throws Exception
   {
     app.goTo().groupPage();
     Groups before=app.group().all();

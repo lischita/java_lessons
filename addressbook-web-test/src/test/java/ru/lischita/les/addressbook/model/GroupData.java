@@ -1,9 +1,13 @@
 package ru.lischita.les.addressbook.model;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
+
 import java.util.Objects;
 
+@XStreamAlias("group")// указываем что в xml использовать тег group"
 public class GroupData {
-
+  @XStreamOmitField   // указываем что следующее поле не записывать в xml
   private  int id=Integer.MAX_VALUE;
   private  String name;
   private  String header;
