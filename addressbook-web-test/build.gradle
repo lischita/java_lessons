@@ -6,4 +6,5 @@ dependencies { implementation("com.thegoate:testng:0.15.8.202107032201")
     implementation("it.ozimov:hamcrest:2.0.0")
     implementation("com.beust:jcommander:1.81")
     implementation("com.thoughtworks.xstream:xstream:1.4.17")
+    implementation("com.google.code.gson:gson:2.8.7")
 }

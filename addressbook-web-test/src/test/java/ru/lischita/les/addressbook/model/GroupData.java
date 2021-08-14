@@ -1,5 +1,6 @@
 package ru.lischita.les.addressbook.model;
 
+import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
@@ -9,8 +10,11 @@ import java.util.Objects;
 public class GroupData {
   @XStreamOmitField   // указываем что следующее поле не записывать в xml
   private  int id=Integer.MAX_VALUE;
+  @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String name;
+  @Expose
   private  String header;
+  @Expose
   private  String footer;
 
   /*  был до 5 занятия

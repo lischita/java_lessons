@@ -1,4 +1,6 @@
 package ru.lischita.les.addressbook.tests;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.thoughtworks.xstream.XStream;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -62,10 +64,20 @@ public class GroupCreationTests extends TestBase {
     xStream.processAnnotations(GroupData.class);
     List<GroupData> groups= (List<GroupData>) xStream.fromXML(xml);
     return groups.stream().map((g)->new Object[] {g}).collect(Collectors.toList()).iterator();
-
-
   }
-
+  @DataProvider // читаем данные из файла json
+  public Iterator<Object[]> validGroupsFromFileJSON() throws IOException {
+    BufferedReader reader= new BufferedReader(new FileReader("src/test/resurces/groups.json"));
+    String json="";
+    String line = reader.readLine();
+    while (line !=null){
+      json+=line;
+      line = reader.readLine();
+    }
+    Gson gson=new Gson();
+    List<GroupData>  groups= gson.fromJson(json, new TypeToken<List<GroupData>>(){}.getType());
+    return groups.stream().map((g)->new Object[] {g}).collect(Collectors.toList()).iterator();
+  }
 
 
 
@@ -94,8 +106,22 @@ public class GroupCreationTests extends TestBase {
     assertThat(after, equalTo(before.withAdded(group.withId(after.stream().mapToInt((g)->g.getId()).max().getAsInt()))));
   }
 
+  @Test (dataProvider = "validGroupsFromFileJSON")// параметризованный тест на вход поступают данные из файла json
+  public void testGroupCreationFileJSON(GroupData group) throws Exception
+  {
+    app.goTo().groupPage();
+    Groups before=app.group().all();
+    app.group().create(group);
+    Groups after=app.group().all();
+    assertThat(after.size(),equalTo(before.size()+1));
+    Assert.assertEquals(before.withAdded(group.withId(after.stream().mapToInt((g)->g.getId()).max().getAsInt())).hashCode(),after.hashCode());
+    assertThat(after, equalTo(before.withAdded(group.withId(after.stream().mapToInt((g)->g.getId()).max().getAsInt()))));
+  }
 
-  @Test (dataProvider = "validGroupsFromFileXML")// параметризованный тест на вход поступают данные из файла xml
+
+
+
+  @Test (enabled = false,dataProvider = "validGroupsFromFileXML")// параметризованный тест на вход поступают данные из файла xml
   public void testGroupCreationFileXML(GroupData group) throws Exception
   {
     app.goTo().groupPage();

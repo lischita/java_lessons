@@ -3,6 +3,8 @@ package ru.lischita.les.addressbook.generator;
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.ParameterException;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.thoughtworks.xstream.XStream;
 import ru.lischita.les.addressbook.model.GroupData;
 
@@ -40,10 +42,11 @@ public class GroupDataGenerator {
     List<GroupData> groups=generateGroups(count);
     if (format.equals("csv")) {saveAsCSV(groups,new File(file));}
     else if (format.equals("xml")){saveAsXML(groups,new File(file));}
+    else if (format.equals("json")){saveAsJSON(groups,new File(file));}
     else System.out.println(("Unrecognized format data"+format));
   }
 
-   private List<GroupData> generateGroups(int count ){
+    private List<GroupData> generateGroups(int count ){
     List<GroupData> groups=new ArrayList<>();
     for (int i=0;i<count;i++){
     groups.add(new GroupData().withName(String.format("test %s",i))
@@ -71,11 +74,14 @@ public class GroupDataGenerator {
     writer.close();
   }
 
-
-
-
-
-
+  private void saveAsJSON(List<GroupData> groups, File file) throws IOException {
+   // Gson gson= new GsonBuilder().setPrettyPrinting().create(); // сохранили все поля  в файл json
+    Gson gson= new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create(); // Сохранили только те поля, что помечены аннотаций Expose
+    String json=gson.toJson(groups);
+    Writer writer= new FileWriter(file);
+    writer.write(json);
+    writer.close();
+  }
 
 
 }
