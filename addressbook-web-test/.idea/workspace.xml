@@ -48,7 +48,21 @@
       <recent name="ru.lischita.les.addressbook.model" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ru.lischita.les.addressbook">
+  <component name="RunManager" selected="Application.GroupDataGenerator">
+    <configuration name="GroupDataGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.generator.GroupDataGenerator" />
+      <module name="addressbook-web-test.test" />
+      <option name="PROGRAM_PARAMETERS" value="10 src\test\resurces\groups.csv" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.lischita.les.addressbook.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ContactCreationTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
@@ -99,47 +113,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ru.lischita.les.addressbook.tests.ContactCreationTests and 5 more (2)" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ru.lischita.les.addressbook.generator" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
-      <option name="TEST_OBJECT" value="PATTERN" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.lischita.les.addressbook.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.generator" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
       <properties />
       <listeners />
-      <patterns>
-        <pattern testClass="ru.lischita.les.addressbook.tests.ContactCreationTests" />
-        <pattern testClass="ru.lischita.les.addressbook.tests.ContactDeleteTest" />
-        <pattern testClass="ru.lischita.les.addressbook.tests.ContactEditTest" />
-        <pattern testClass="ru.lischita.les.addressbook.tests.GroupCreationTests" />
-        <pattern testClass="ru.lischita.les.addressbook.tests.GroupDeletionTest" />
-        <pattern testClass="ru.lischita.les.addressbook.tests.GroupModificationTests" />
-      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ru.lischita.les.addressbook.tests.ContactCreationTests and 5 more (3)" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="addressbook-web-test.test" />
-      <option name="TEST_OBJECT" value="PATTERN" />
-      <properties />
-      <listeners />
-      <patterns>
-        <pattern testClass="ru.lischita.les.addressbook.tests.ContactCreationTests" />
-        <pattern testClass="ru.lischita.les.addressbook.tests.ContactDeleteTest" />
-        <pattern testClass="ru.lischita.les.addressbook.tests.ContactEditTest" />
-        <pattern testClass="ru.lischita.les.addressbook.tests.GroupCreationTests" />
-        <pattern testClass="ru.lischita.les.addressbook.tests.GroupDeletionTest" />
-        <pattern testClass="ru.lischita.les.addressbook.tests.GroupModificationTests" />
-      </patterns>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.GroupDataGenerator" />
+      <item itemvalue="TestNG.ContactCreationTests" />
+      <item itemvalue="TestNG.ContactPhoneTest" />
+      <item itemvalue="TestNG.ru.lischita.les.addressbook" />
+      <item itemvalue="TestNG.ru.lischita.les.addressbook.generator" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GroupDataGenerator" />
+        <item itemvalue="TestNG.ru.lischita.les.addressbook.generator" />
+        <item itemvalue="TestNG.ContactCreationTests" />
         <item itemvalue="TestNG.ru.lischita.les.addressbook" />
         <item itemvalue="TestNG.ContactPhoneTest" />
-        <item itemvalue="TestNG.ContactCreationTests" />
-        <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.ContactCreationTests and 5 more (3)" />
-        <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.ContactCreationTests and 5 more (2)" />
       </list>
     </recent_temporary>
   </component>

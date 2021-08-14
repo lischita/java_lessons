@@ -1,5 +1,6 @@
 package ru.lischita.les.addressbook.model;
 
+import java.io.File;
 import java.util.Objects;
 
 public class ContactData {
@@ -24,6 +25,7 @@ public class ContactData {
   private  String homeaddress;
   private  String allphones;
   private  String allemails;
+  private File photo;
 
 
   /*public ContactData(int id,String name, String middlename, String lastname, String nickname, String title, String company, String address, String homephone, String mobilephone, String email, String bday, String bmonth, String byear, String group, String homeaddress) {
@@ -142,6 +144,15 @@ public class ContactData {
   }
   public String getAllemails() {
     return allemails;
+  }
+
+  public File getPhoto() {
+    return photo;
+  }
+
+  public ContactData withPhoto(File photo) {
+    this.photo = photo;
+    return this;
   }
 
   public ContactData withId(int id) {
