@@ -52,7 +52,7 @@
     <configuration name="GroupDataGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.generator.GroupDataGenerator" />
       <module name="addressbook-web-test.test" />
-      <option name="PROGRAM_PARAMETERS" value="10 src\test\resurces\groups.csv" />
+      <option name="PROGRAM_PARAMETERS" value="-c 20 -f src\test\resurces\groups.csv" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ru.lischita.les.addressbook.generator.*" />
