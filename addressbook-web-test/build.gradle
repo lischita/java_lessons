@@ -8,3 +8,13 @@ dependencies { implementation("com.thegoate:testng:0.15.8.202107032201")
     implementation("com.thoughtworks.xstream:xstream:1.4.17")
     implementation("com.google.code.gson:gson:2.8.7")
 }
+
+task testGroups (type: Test)
+{
+    useTestNG  {suites'src/test/resurces/test/test-Groups.xml' }
+}
+
+task testContacts (type: Test)
+{
+    useTestNG {suites'src/test/resurces/test/test-Contacts.xml' }
+}
