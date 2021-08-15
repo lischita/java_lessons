@@ -1,5 +1,6 @@
 [
   {
+    "id": 2147483647,
     "name": "Дмитрий 0",
     "middlename": "Тестович 0",
     "lastname": "Петрович0",
@@ -16,9 +17,12 @@
     "byear": "1980",
     "group": "test1",
     "homeaddress": "г. Москва, ул. Тестиррования  дом 13 0",
-    "photo": {}
+    "photo": {
+      "path": "src\\test\\resurces\\photo_0.jpg"
+    }
   },
   {
+    "id": 2147483647,
     "name": "Дмитрий 1",
     "middlename": "Тестович 1",
     "lastname": "Петрович1",
@@ -35,6 +39,8 @@
     "byear": "1980",
     "group": "test1",
     "homeaddress": "г. Москва, ул. Тестиррования  дом 13 1",
-    "photo": {}
+    "photo": {
+      "path": "src\\test\\resurces\\photo_0.jpg"
+    }
   }
 ]

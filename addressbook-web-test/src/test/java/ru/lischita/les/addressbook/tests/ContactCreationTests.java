@@ -52,7 +52,7 @@ public class ContactCreationTests extends TestBase
   }
 
 
-  @Test (enabled = false, dataProvider = "validContactsFromFileXML")
+  @Test (dataProvider = "validContactsFromFileXML")
   public void testContactCreationTestsXML(ContactData contacts) throws Exception
   {
     app.goTo().HomePage();

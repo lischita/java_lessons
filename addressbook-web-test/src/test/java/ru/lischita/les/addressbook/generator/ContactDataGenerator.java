@@ -45,7 +45,8 @@ public class ContactDataGenerator {
   }
 
   private List<ContactData> generateContacts(int count){
-   //File photo=new File("src/test/resurces/photo.jpg");
+   File photo=new File("src/test/resurces/photo_0.jpg");
+
     List<ContactData> contacts=new ArrayList<>();
     for (int i=0;i<count;i++){
       contacts.add(new ContactData()
@@ -65,7 +66,7 @@ public class ContactDataGenerator {
               .withGroup("test1")
               .withHomeaddress(String.format("г. Москва, ул. Тестиррования  дом 13 %s",i))
               .withWorkphone(String.format("495-123-45-67 %s",i))
-              .withPhoto(new File("src/test/resurces/photo_0.jpg")));
+              .withPhoto(photo));
     }
     return contacts;
   }
@@ -80,8 +81,8 @@ public class ContactDataGenerator {
   }
 
   private void saveAsJSON(List<ContactData> contacts, File file) throws IOException {
-    // Gson gson= new GsonBuilder().setPrettyPrinting().create(); // сохранили все поля  в файл json
-    Gson gson= new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create(); // Сохранили только те поля, что помечены аннотаций Expose
+     Gson gson= new GsonBuilder().setPrettyPrinting().create(); // сохранили все поля  в файл json
+    //Gson gson= new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create(); // Сохранили только те поля, что помечены аннотаций Expose
     String json=gson.toJson(contacts);
     Writer writer= new FileWriter(file);
     writer.write(json);
