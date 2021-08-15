@@ -81,7 +81,7 @@ public class ContactDataGenerator {
   }
 
   private void saveAsJSON(List<ContactData> contacts, File file) throws IOException {
-     Gson gson= new GsonBuilder().setPrettyPrinting().create(); // сохранили все поля  в файл json
+    Gson gson= new GsonBuilder().setPrettyPrinting().create(); // сохранили все поля  в файл json
     //Gson gson= new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create(); // Сохранили только те поля, что помечены аннотаций Expose
     String json=gson.toJson(contacts);
     Writer writer= new FileWriter(file);
