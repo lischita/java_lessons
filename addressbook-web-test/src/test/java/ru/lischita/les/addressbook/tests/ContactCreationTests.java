@@ -81,7 +81,7 @@ public class ContactCreationTests extends TestBase
 
   @Test (enabled = false)
   public void testContactCreationTests() throws Exception
- { File photo=new File("src/test/resurces/photo.jpg");
+ { File photo=new File("src/test/resurces/photo_0.jpg");
    app.goTo().HomePage();
    Contacts before=app.contact().all();
    ContactData contacts=new ContactData().withName("Дмитрий").withMiddlename("Тестович").withLastname("Петрович").withNickname("Тестер")
