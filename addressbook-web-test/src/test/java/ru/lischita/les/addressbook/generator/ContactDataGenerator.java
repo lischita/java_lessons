@@ -75,18 +75,16 @@ public class ContactDataGenerator {
     XStream xStream=new XStream();
     xStream.processAnnotations(ContactData.class);
     String xml=xStream.toXML(contacts);
-    Writer writer= new FileWriter(file);
-    writer.write(xml);
-    writer.close();
+    try( Writer writer= new FileWriter(file)) { writer.write(xml);}// вместо writer.close(); используем параметризированный try
+
   }
 
   private void saveAsJSON(List<ContactData> contacts, File file) throws IOException {
     Gson gson= new GsonBuilder().setPrettyPrinting().create(); // сохранили все поля  в файл json
     //Gson gson= new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create(); // Сохранили только те поля, что помечены аннотаций Expose
     String json=gson.toJson(contacts);
-    Writer writer= new FileWriter(file);
-    writer.write(json);
-    writer.close();
+    try (Writer writer= new FileWriter(file)) { writer.write(json);}
+
   }
 
 
