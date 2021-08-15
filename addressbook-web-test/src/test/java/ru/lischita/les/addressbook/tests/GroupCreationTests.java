@@ -41,7 +41,9 @@ public class GroupCreationTests extends TestBase {
   @DataProvider // читаем данные из файла csv
   public Iterator<Object[]> validGroupsFromFileCSV() throws IOException {
     List<Object[]> list=new ArrayList<Object[]>();
-    try (BufferedReader reader= new BufferedReader(new FileReader("src/test/resurces/groups.csv"))) {
+    //try (BufferedReader reader= new BufferedReader(new FileReader("src/test/resurces/groups.csv")))
+    try (BufferedReader reader= new BufferedReader(new FileReader(app.properties.getProperty("groupsDataCSV"))))
+    {
       String line = reader.readLine();
       while (line != null) {
         String[] split = line.split(";");
@@ -54,7 +56,9 @@ public class GroupCreationTests extends TestBase {
 
   @DataProvider // читаем данные из файла xml
   public Iterator<Object[]> validGroupsFromFileXML() throws IOException {
-    try (BufferedReader reader= new BufferedReader(new FileReader("src/test/resurces/groups.xml"))) {
+   // try (BufferedReader reader= new BufferedReader(new FileReader("src/test/resurces/groups.xml")))
+    try (BufferedReader reader= new BufferedReader(new FileReader(app.properties.getProperty("groupsDataXML"))))
+    {
       String xml = "";
       String line = reader.readLine();
       while (line != null) {
@@ -69,7 +73,8 @@ public class GroupCreationTests extends TestBase {
   }
   @DataProvider // читаем данные из файла json
   public Iterator<Object[]> validGroupsFromFileJSON() throws IOException {
-    try (BufferedReader reader= new BufferedReader(new FileReader("src/test/resurces/groups.json")))
+    //try (BufferedReader reader= new BufferedReader(new FileReader("src/test/resurces/groups.json")))
+    try (BufferedReader reader= new BufferedReader(new FileReader(app.properties.getProperty("groupsDataJSON"))))
     {
       String json = "";
       String line = reader.readLine();
@@ -126,7 +131,7 @@ public class GroupCreationTests extends TestBase {
 
 
 
-  @Test (enabled = false,dataProvider = "validGroupsFromFileXML")// параметризованный тест на вход поступают данные из файла xml
+  @Test (dataProvider = "validGroupsFromFileXML")// параметризованный тест на вход поступают данные из файла xml
   public void testGroupCreationFileXML(GroupData group) throws Exception
   {
     app.goTo().groupPage();
@@ -139,7 +144,7 @@ public class GroupCreationTests extends TestBase {
   }
 
 
-  @Test (enabled = false, dataProvider = "validGroupsFromFileCSV")// параметризованный тест на вход поступают данные из файла csv
+  @Test (dataProvider = "validGroupsFromFileCSV")// параметризованный тест на вход поступают данные из файла csv
   public void testGroupCreationFileCSV(GroupData group) throws Exception
   {
     app.goTo().groupPage();

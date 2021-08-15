@@ -1,7 +1,9 @@
 apply plugin: 'java'
 
 repositories {mavenCentral()}
-dependencies { implementation("com.thegoate:testng:0.15.8.202107032201")
+dependencies {
+    implementation("com.thegoate:testng:0.15.8.202107032201")
+    implementation("org.testng:testng:7.4.0")
     implementation("org.seleniumhq.selenium:selenium-java:4.0.0-beta-4")
     implementation("it.ozimov:hamcrest:2.0.0")
     implementation("com.beust:jcommander:1.81")
@@ -9,12 +11,28 @@ dependencies { implementation("com.thegoate:testng:0.15.8.202107032201")
     implementation("com.google.code.gson:gson:2.8.7")
 }
 
-task testGroups (type: Test)
+task testGroups(type: Test)
 {
     useTestNG  {suites'src/test/resurces/test/test-Groups.xml' }
+    if (project.hasProperty('browser'))
+    {
+        systemProperty 'browser',"${browser}"
+    }
+    if (project.hasProperty('target'))
+    {
+        systemProperty 'target',"${target}"
+    }
 }
 
-task testContacts (type: Test)
+task testContacts(type: Test)
 {
     useTestNG {suites'src/test/resurces/test/test-Contacts.xml' }
+    if (project.hasProperty('browser'))
+    {
+        systemProperty 'browser',"${browser}"
+    }
+    if (project.hasProperty('target'))
+    {
+        systemProperty 'target',"${target}"
+    }
 }
