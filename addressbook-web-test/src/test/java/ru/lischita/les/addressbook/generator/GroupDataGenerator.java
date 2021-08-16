@@ -22,7 +22,7 @@ public class GroupDataGenerator {
   @Parameter(names = "-f",description = ("Target File"))
   public String file;
   @Parameter(names = "-d",description = ("Data Format"))
-  public String format;  // пример команды -c 2 -d csv -f src/test/resurces/groups.csv
+  public String format;
 
   public static void main (String[] args) throws IOException {
     GroupDataGenerator generator=new GroupDataGenerator();

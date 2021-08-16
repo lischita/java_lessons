@@ -2,8 +2,6 @@ package ru.lischita.les.addressbook.tests;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.thoughtworks.xstream.XStream;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import ru.lischita.les.addressbook.model.GroupData;
@@ -20,9 +18,7 @@ import java.util.stream.Collectors;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-
 public class GroupCreationTests extends TestBase {
-
 
   @DataProvider
   public Iterator<Object[]> validGroups(){
@@ -130,7 +126,6 @@ public class GroupCreationTests extends TestBase {
     assertThat(after.size(),equalTo(before.size()+1));
     Assert.assertEquals(before.withAdded(group.withId(after.stream().mapToInt((g)->g.getId()).max().getAsInt())).hashCode(),after.hashCode());
     assertThat(after, equalTo(before.withAdded(group.withId(after.stream().mapToInt((g)->g.getId()).max().getAsInt()))));
-
   }
 
 

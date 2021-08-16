@@ -48,35 +48,46 @@
       <recent name="ru.lischita.les.addressbook.model" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ContactEditTest">
-    <configuration name="ContactDataGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.generator.ContactDataGenerator" />
+  <component name="RunManager" selected="TestNG.GroupCreationTests">
+    <configuration name="C:/Users/Елизавета Криворучка/Documents/GitHub/java_lessons/addressbook-web-test/src/test/resurces/test-Groups.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.lischita.les.addressbook.generator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resurces/test-Groups.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GroupDataGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.generator.GroupDataGenerator" />
+    <configuration name="ContactCreationTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
-      <option name="PROGRAM_PARAMETERS" value="-c 2 -d csv -f src/test/resurces/groups.csv" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.lischita.les.addressbook.generator.*" />
+          <option name="PATTERN" value="ru.lischita.les.addressbook.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.ContactCreationTests" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea -Dtarget=local -Dbrowser=chrome " />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContactEditTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GroupCreationTests (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
         <pattern>
@@ -85,7 +96,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.ContactEditTest" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.GroupCreationTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -121,7 +132,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GroupCreationTests.testGroupCreationFileJSON" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GroupDeletionTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
         <pattern>
@@ -130,9 +141,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.GroupCreationTests" />
-      <option name="METHOD_NAME" value="testGroupCreationFileJSON" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.GroupDeletionTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -140,19 +150,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.GroupDataGenerator" />
-      <item itemvalue="Application.ContactDataGenerator" />
+      <item itemvalue="TestNG.ContactCreationTests" />
       <item itemvalue="TestNG.GroupCreationTests" />
-      <item itemvalue="TestNG.GroupCreationTests.testGroupCreationFileJSON" />
-      <item itemvalue="TestNG.ContactEditTest" />
+      <item itemvalue="TestNG.C:/Users/Елизавета Криворучка/Documents/GitHub/java_lessons/addressbook-web-test/src/test/resurces/test-Groups.xml" />
+      <item itemvalue="TestNG.GroupDeletionTest" />
+      <item itemvalue="TestNG.GroupCreationTests (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.ContactEditTest" />
         <item itemvalue="TestNG.GroupCreationTests" />
-        <item itemvalue="TestNG.GroupCreationTests.testGroupCreationFileJSON" />
-        <item itemvalue="Application.GroupDataGenerator" />
-        <item itemvalue="Application.ContactDataGenerator" />
+        <item itemvalue="TestNG.ContactCreationTests" />
+        <item itemvalue="TestNG.GroupCreationTests (1)" />
+        <item itemvalue="TestNG.GroupDeletionTest" />
+        <item itemvalue="TestNG.C:/Users/Елизавета Криворучка/Documents/GitHub/java_lessons/addressbook-web-test/src/test/resurces/test-Groups.xml" />
       </list>
     </recent_temporary>
   </component>
