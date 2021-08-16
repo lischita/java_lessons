@@ -1,7 +1,5 @@
 package ru.lischita.les.addressbook.tests;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -12,8 +10,6 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ContactEditTest extends TestBase {
-
-
 
   @BeforeMethod
   public void ensurePreconditions(){
@@ -27,7 +23,6 @@ public class ContactEditTest extends TestBase {
 @Test
   public void testContactEdit()
   {
-
     app.goTo().HomePage();
     Contacts before=app.contact().all();
     ContactData contactGroup=before.iterator().next();
@@ -39,7 +34,6 @@ public class ContactEditTest extends TestBase {
     //assertThat(after,equalTo(before.withOut(contactGroup).withAdded(contact)));
     Assert.assertEquals(before.withModify(contactGroup,contact).hashCode(),after.hashCode());
     assertThat(after,equalTo(before.withModify(contactGroup,contact)));
-
   }
 }
 
