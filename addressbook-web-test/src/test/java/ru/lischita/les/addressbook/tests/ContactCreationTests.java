@@ -2,6 +2,8 @@ package ru.lischita.les.addressbook.tests;
 
 import com.beust.jcommander.ParameterException;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonDeserializer;
 import com.google.gson.reflect.TypeToken;
 import com.thoughtworks.xstream.XStream;
 import org.testng.Assert;
@@ -43,14 +45,16 @@ public class ContactCreationTests extends TestBase
     @DataProvider // читаем данные из файла json
     public Iterator<Object[]> validContactsFromFileJSON () throws IOException {
     //try (BufferedReader reader= new BufferedReader(new FileReader("src/test/resurces/contacts.json")))
-    try (BufferedReader reader = new BufferedReader(new FileReader(app.properties.getProperty("contactsDataJSON")))) {
+      JsonDeserializer<File> deserializer = (json, typeOfT, context) -> new File(json.getAsJsonPrimitive().getAsString());//для чтения типа File в том числе
+     try (BufferedReader reader = new BufferedReader(new FileReader(app.properties.getProperty("contactsDataJSON")))) {
       String json = "";
       String line = reader.readLine();
       while (line != null) {
         json += line;
         line = reader.readLine();
       }
-      Gson gson = new Gson();
+      //Gson gson = new Gson(); // для простых типов
+      Gson gson = new GsonBuilder().registerTypeAdapter(File.class, deserializer).create(); //  для чтения типа File в том числе
       List<ContactData> groups = gson.fromJson(json, new TypeToken<List<ContactData>>() {
       }.getType());
       return groups.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();

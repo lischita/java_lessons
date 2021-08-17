@@ -5,6 +5,8 @@ import com.beust.jcommander.Parameter;
 import com.beust.jcommander.ParameterException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.JsonSerializer;
 import com.thoughtworks.xstream.XStream;
 import ru.lischita.les.addressbook.model.ContactData;
 import ru.lischita.les.addressbook.model.GroupData;
@@ -80,8 +82,14 @@ public class ContactDataGenerator {
   }
 
   private void saveAsJSON(List<ContactData> contacts, File file) throws IOException {
-    Gson gson= new GsonBuilder().setPrettyPrinting().create(); // сохранили все поля  в файл json
-    //Gson gson= new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create(); // Сохранили только те поля, что помечены аннотаций Expose
+    //Gson gson= new GsonBuilder().setPrettyPrinting().create(); // сохранили все поля  в файл json
+    //Gson gson= new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create(); // Сохранили только те поля, что помечены аннотаций Expose работает для простых типов
+
+    JsonSerializer<File> serializer = (src, typeOfSrc, context) -> new JsonPrimitive(src.getPath()); // Сохраняем только те поля что помечены
+    Gson gson = new GsonBuilder()                                                                   //аннотаций Expose но уже для поля типа File
+            .registerTypeAdapter(File.class, serializer)
+            .setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
+
     String json=gson.toJson(contacts);
     try (Writer writer= new FileWriter(file)) { writer.write(json);}
 

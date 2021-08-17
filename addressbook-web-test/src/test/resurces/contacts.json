@@ -1,6 +1,5 @@
 [
   {
-    "id": 2147483647,
     "name": "Дмитрий 0",
     "middlename": "Тестович 0",
     "lastname": "Петрович0",
@@ -17,12 +16,9 @@
     "byear": "1980",
     "group": "test1",
     "homeaddress": "г. Москва, ул. Тестиррования  дом 13 0",
-    "photo": {
-      "path": "src\\test\\resurces\\photo_0.jpg"
-    }
+    "photo": "src\\test\\resurces\\photo_0.jpg"
   },
   {
-    "id": 2147483647,
     "name": "Дмитрий 1",
     "middlename": "Тестович 1",
     "lastname": "Петрович1",
@@ -39,8 +35,25 @@
     "byear": "1980",
     "group": "test1",
     "homeaddress": "г. Москва, ул. Тестиррования  дом 13 1",
-    "photo": {
-      "path": "src\\test\\resurces\\photo_0.jpg"
-    }
+    "photo": "src\\test\\resurces\\photo_0.jpg"
+  },
+  {
+    "name": "Дмитрий 2",
+    "middlename": "Тестович 2",
+    "lastname": "Петрович2",
+    "nickname": "Тестер2",
+    "title": "Тестировщик2",
+    "company": "Тест-Комплект2",
+    "address": "г.Москва Тестовая дом 13 2",
+    "homephone": "8-495-123-56-78 2",
+    "mobilephone": "8-976-456-67-87 2",
+    "workphone": "495-123-45-67 2",
+    "email": "test@test_complect.ru 2",
+    "bday": "11",
+    "bmonth": "May",
+    "byear": "1980",
+    "group": "test1",
+    "homeaddress": "г. Москва, ул. Тестиррования  дом 13 2",
+    "photo": "src\\test\\resurces\\photo_0.jpg"
   }
 ]
