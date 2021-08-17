@@ -48,7 +48,7 @@
       <recent name="ru.lischita.les.addressbook.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ContactDataGenerator">
+  <component name="RunManager" selected="TestNG.ContactEditTest">
     <configuration name="ContactDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.generator.ContactDataGenerator" />
       <module name="addressbook-web-test.test" />
@@ -66,7 +66,7 @@
     <configuration name="GroupDataGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.generator.GroupDataGenerator" />
       <module name="addressbook-web-test.test" />
-      <option name="PROGRAM_PARAMETERS" value="-c 2 -f /src/test/resurces/groups.csv -dcsv" />
+      <option name="PROGRAM_PARAMETERS" value="-c 2 -f src/test/resurces/groups.csv -d csv" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ru.lischita.les.addressbook.generator.*" />
@@ -177,8 +177,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GroupDataGenerator" />
         <item itemvalue="TestNG.ContactEditTest" />
+        <item itemvalue="Application.GroupDataGenerator" />
         <item itemvalue="TestNG.GroupCreationTests" />
         <item itemvalue="TestNG.ContactCreationTests" />
         <item itemvalue="TestNG.GroupCreationTests (1)" />

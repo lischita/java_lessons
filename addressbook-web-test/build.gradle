@@ -12,6 +12,13 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:1.1.5")
 }
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+tasks.withType(Test) {
+    systemProperty "file.encoding", "UTF-8"
+}
+
 task testGroups(type: Test)
 {
     useTestNG  {suites'src/test/resurces/test-Groups.xml' }
@@ -27,21 +34,13 @@ task testGroups(type: Test)
 
 task testContacts(type: Test)
 {
-    useTestNG {suites'src/test/resurces/test-Contacts.xml' }
-    if (project.hasProperty('browser'))
-    {
-        systemProperty 'browser',"${browser}"
+    useTestNG {suites'src/test/resurces/test-Contacts.xml'}
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
     }
-    if (project.hasProperty('target'))
-    {
-        systemProperty 'target',"${target}"
+    if (project.hasProperty('target')) {
+        systemProperty 'target', "${target}"
     }
-
-    tasks.withType(JavaCompile) {
-        options.encoding = 'UTF-8'
-    }
-    tasks.withType(Test) {
-        systemProperty "file.encoding", "UTF-8"
-    }
-
 }
+
+
