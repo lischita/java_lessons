@@ -27,7 +27,7 @@ public class ContactCreationTests extends TestBase
 {
     @DataProvider // читаем данные из файла xml
     public Iterator<Object[]> validContactsFromFileXML () throws IOException {
-    //try (BufferedReader reader= new BufferedReader(new FileReader("src/test/resurces/contacts.xml")))
+    //try (BufferedReader reader= new BufferedReader(new FileReader("src/test/resources/contacts.xml")))
     try (BufferedReader reader = new BufferedReader(new FileReader(app.properties.getProperty("contactsDataXML")))) {
       String xml = "";
       String line = reader.readLine();
@@ -44,7 +44,7 @@ public class ContactCreationTests extends TestBase
 
     @DataProvider // читаем данные из файла json
     public Iterator<Object[]> validContactsFromFileJSON () throws IOException {
-    //try (BufferedReader reader= new BufferedReader(new FileReader("src/test/resurces/contacts.json")))
+    //try (BufferedReader reader= new BufferedReader(new FileReader("src/test/resources/contacts.json")))
       JsonDeserializer<File> deserializer = (json, typeOfT, context) -> new File(json.getAsJsonPrimitive().getAsString());//для чтения типа File в том числе
      try (BufferedReader reader = new BufferedReader(new FileReader(app.properties.getProperty("contactsDataJSON")))) {
       String json = "";
@@ -92,7 +92,7 @@ public class ContactCreationTests extends TestBase
     @Test(enabled = false)
     public void testContactCreationTests () throws Exception
     {
-      File photo = new File("src/test/resurces/photo_0.jpg");
+      File photo = new File("src/test/resources/photo_0.jpg");
       app.goTo().HomePage();
       Contacts before = app.contact().all();
       ContactData contacts = new ContactData().withName("Дмитрий").withMiddlename("Тестович").withLastname("Петрович").withNickname("Тестер")

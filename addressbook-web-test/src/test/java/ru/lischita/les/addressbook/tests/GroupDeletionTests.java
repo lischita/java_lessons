@@ -9,7 +9,7 @@ import ru.lischita.les.addressbook.model.Groups;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class GroupDeletionTest extends TestBase
+public class GroupDeletionTests extends TestBase
 {
   @BeforeMethod
   public void ensurePreconditions()

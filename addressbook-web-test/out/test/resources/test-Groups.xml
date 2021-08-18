@@ -6,7 +6,7 @@
         <classes>
             <class name = "ru.lischita.les.addressbook.tests.GroupCreationTests"/>
             <class name = "ru.lischita.les.addressbook.tests.GroupModificationTests"/>
-            <class name = "ru.lischita.les.addressbook.tests.GroupDeletionTest"/>
+            <class name = "ru.lischita.les.addressbook.tests.GroupDeletionTests"/>
         </classes>
     </test>
 </suite>

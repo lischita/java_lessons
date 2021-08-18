@@ -1,0 +1,13 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "Suite1">
+    <test name = "Contacts">
+        <classes>
+            <class name = "ru.lischita.les.addressbook.tests.ContactCreationTests"/>
+            <class name = "ru.lischita.les.addressbook.tests.ContactEditTest"/>
+            <class name = "ru.lischita.les.addressbook.tests.ContactDeleteTest"/>
+            <class name = "ru.lischita.les.addressbook.tests.ContactPhoneTest"/>
+        </classes>
+    </test>
+</suite>

@@ -47,7 +47,7 @@ public class ContactDataGenerator {
   }
 
   private List<ContactData> generateContacts(int count){
-   File photo=new File("src/test/resurces/photo_0.jpg");
+   File photo=new File("src/test/resources/photo_0.jpg");
 
     List<ContactData> contacts=new ArrayList<>();
     for (int i=0;i<count;i++){

@@ -41,7 +41,7 @@ public class GroupCreationTests extends TestBase {
   @DataProvider // читаем данные из файла csv
   public Iterator<Object[]> validGroupsFromFileCSV() throws IOException {
     List<Object[]> list=new ArrayList<Object[]>();
-    //try (BufferedReader reader= new BufferedReader(new FileReader("src/test/resurces/groups.csv")))
+    //try (BufferedReader reader= new BufferedReader(new FileReader("src/test/resources/groups.csv")))
     try (BufferedReader reader= new BufferedReader(new FileReader(app.properties.getProperty("groupsDataCSV"))))
     {
       String line = reader.readLine();
@@ -56,7 +56,7 @@ public class GroupCreationTests extends TestBase {
 
   @DataProvider // читаем данные из файла xml
   public Iterator<Object[]> validGroupsFromFileXML() throws IOException {
-   // try (BufferedReader reader= new BufferedReader(new FileReader("src/test/resurces/groups.xml")))
+   // try (BufferedReader reader= new BufferedReader(new FileReader("src/test/resources/groups.xml")))
     try (BufferedReader reader= new BufferedReader(new FileReader(app.properties.getProperty("groupsDataXML"))))
     {
       String xml = "";
@@ -73,7 +73,7 @@ public class GroupCreationTests extends TestBase {
   }
   @DataProvider // читаем данные из файла json
   public Iterator<Object[]> validGroupsFromFileJSON() throws IOException {
-    //try (BufferedReader reader= new BufferedReader(new FileReader("src/test/resurces/groups.json")))
+    //try (BufferedReader reader= new BufferedReader(new FileReader("src/test/resources/groups.json")))
     try (BufferedReader reader= new BufferedReader(new FileReader(app.properties.getProperty("groupsDataJSON"))))
     {
       String json = "";
