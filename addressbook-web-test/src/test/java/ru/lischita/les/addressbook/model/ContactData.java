@@ -3,15 +3,22 @@ package ru.lischita.les.addressbook.model;
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.*;
 import java.io.File;
 import java.util.Objects;
 
 @XStreamAlias("contact") // указываем что в xml использовать тег contact
+@Entity
+@Table(name="addressbook")
 public class ContactData {
   @XStreamOmitField   // указываем что следующее поле не записывать в xml
+  @Id
+  @Column (name="id") // указал, на всякий случай, но можно было не указывать, так как наименование одинаково, далее если совпадает я не указываю
   private int id=Integer.MAX_VALUE;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
+  @Column (name="firstname")
   private  String name;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String middlename;
@@ -24,35 +31,55 @@ public class ContactData {
   @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String company;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
+  @Type(type="text")
   private  String address;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
+  @Column (name="home")
+  @Type(type="text")
   private  String homephone;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
+  @Column (name="mobile")
+  @Type(type="text")
   private  String mobilephone;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
+  @Column (name="work")
+  @Type(type="text")
   private  String workphone;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
+  @Type(type="text")
   private  String email;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
+  @Type(type="text")
   private  String email2;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
+  @Type(type="text")
   private  String email3;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
-  private  String bday;
+  //@Type (type="tinyint")
+  @Transient
+  private  short bday;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String bmonth;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String byear;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
+  @Transient // используем эту аннтацию если поле не извлекаем из базы  когда используем HBConnectionTest
   private  String group;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
+  @Column (name="address2")
+  @Type(type="text")
   private  String homeaddress;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
+  @Transient
   private  String allphones;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
+  @Transient
   private  String allemails;
   @Expose// указываем что это поле обязательно жолжно быть в json файле
-  private   File photo;
+  @Column (name="photo")
+  @Type(type="text")
+  //private   File photo; было до аодключения к БД
+  private String photo; // когда подключаем БД  HBConnectionTest
 
 
   /*public ContactData(int id,String name, String middlename, String lastname, String nickname, String title, String company, String address, String homephone, String mobilephone, String email, String bday, String bmonth, String byear, String group, String homeaddress) {
@@ -142,9 +169,7 @@ public class ContactData {
 
   public String getEmail3() {  return email3;  }
 
-  public String getBday() {
-    return bday;
-  }
+  public String getBday() {return Short.toString(bday);}
 
   public String getBmonth() {
     return bmonth;
@@ -173,14 +198,19 @@ public class ContactData {
     return allemails;
   }
 
-  public File getPhoto() {
-    return photo;
-  }
+ // public File getPhoto() { return photo;}//было до аодключения к БД
+ public File getPhoto() { return new File(photo);}
 
-  public ContactData withPhoto(File photo) {
+  /*public ContactData withPhoto(File photo) {
     this.photo = photo;
     return this;
+  }*/ //было до аодключения к БД
+
+  public ContactData withPhoto(File photo) {
+    this.photo = photo.getPath();
+    return this;
   }
+
 
   public ContactData withId(int id) {
     this.id = id;
@@ -246,7 +276,7 @@ public class ContactData {
   }
 
   public ContactData withBday(String bday) {
-    this.bday = bday;
+    this.bday = Short.parseShort(bday);
     return this;
   }
 
