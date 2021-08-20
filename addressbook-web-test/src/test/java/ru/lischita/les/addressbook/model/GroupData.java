@@ -3,18 +3,32 @@ package ru.lischita.les.addressbook.model;
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Objects;
 
 @XStreamAlias("group")// указываем что в xml использовать тег group"
+@Entity // объявляет класс GroupData привязанным к базе когда используем HBConnectionTest
+@Table  (name="group_list") // Если бы таблица именовалась также как класс, то все бы присоединилось автомоматом, а так тут указываем имя таблицы огда используем HBConnectionTest
 public class GroupData {
   @XStreamOmitField   // указываем что следующее поле не записывать в xml
+  @Id // используем эту аннтацию так как атрибут id использует как идентификатор когда используем HBConnectionTest
+  @Column (name = "group_id") //привязка к столбцу таблицы когда используем HBConnectionTest, если бы название столбца совпадало с названием атрибуто, то это не нужно
   private  int id=Integer.MAX_VALUE;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
+  @Column (name = "group_name")
   private  String name;
   @Expose
+  @Column (name = "group_header")
+  @Type(type="text")
   private  String header;
   @Expose
+  @Column (name = "group_footer")
+  @Type(type="text")//когда используем HBConnectionTest иногда нужно ему подсказать с преобразованием типа
   private  String footer;
 
   /*  был до 5 занятия
@@ -77,7 +91,7 @@ public class GroupData {
   @Override
   public String toString() {
     return "GroupData{" +
-           // "id=" + id +
+            "id=" + id +
             ", name='" + name + '\'' +
             ", header='" + header + '\'' +
             ", footer='" + footer + '\'' +
