@@ -7,11 +7,12 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import ru.lischita.les.addressbook.model.ContactData;
 import ru.lischita.les.addressbook.model.GroupData;
 
 import java.util.List;
 
-public class HBConnectionTest {
+public class DBHBConnectionContactTest {
 
   private SessionFactory sessionFactory;
 
@@ -37,10 +38,10 @@ public class HBConnectionTest {
   public void testHbConnection (){
     Session session = sessionFactory.openSession();
     session.beginTransaction();
-    List result = session.createQuery( "from GroupData" ).list(); // извелкаем объект OQL ( object query language )
-    for ( GroupData group : (List<GroupData>) result ) // можно убрать преобразование типа, указав ранее тип result kak  List<GroupData>, а не List
+    List<ContactData> result = session.createQuery( "from ContactData where deprecated='0000-00-00'" ).list(); // извелкаем объект OQL ( object query language )
+    for ( ContactData contact : result )
     {
-      System.out.println(group);
+      System.out.println(contact);
     }
     session.getTransaction().commit();
     session.close();

@@ -55,9 +55,8 @@ public class ContactData {
   @Type(type="text")
   private  String email3;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
-  //@Type (type="tinyint")
-  @Transient
-  private  short bday;
+  @Column(name="bday", columnDefinition = "TINYINT(1)")
+  private String bday; // было до подключения к БД
   @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String bmonth;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
@@ -78,7 +77,7 @@ public class ContactData {
   @Expose// указываем что это поле обязательно жолжно быть в json файле
   @Column (name="photo")
   @Type(type="text")
-  //private   File photo; было до аодключения к БД
+  //private   File photo; //было до аодключения к БД
   private String photo; // когда подключаем БД  HBConnectionTest
 
 
@@ -169,7 +168,8 @@ public class ContactData {
 
   public String getEmail3() {  return email3;  }
 
-  public String getBday() {return Short.toString(bday);}
+  //public String getBday() {return Byte.toString(bday);}
+  public String getBday() {return bday;} // было до подключения к БД
 
   public String getBmonth() {
     return bmonth;
@@ -198,10 +198,10 @@ public class ContactData {
     return allemails;
   }
 
- // public File getPhoto() { return photo;}//было до аодключения к БД
- public File getPhoto() { return new File(photo);}
+  // public File getPhoto() { return photo;}//было до аодключения к БД
+  public File getPhoto() {return new File(photo);}
 
-  /*public ContactData withPhoto(File photo) {
+/* public ContactData withPhoto(File photo) {
     this.photo = photo;
     return this;
   }*/ //было до аодключения к БД
@@ -275,8 +275,10 @@ public class ContactData {
     return this;
   }
 
+
   public ContactData withBday(String bday) {
-    this.bday = Short.parseShort(bday);
+  // this.bday = Byte.parseByte(bday);
+   this.bday = bday;  // было до подключения к БД
     return this;
   }
 
@@ -297,6 +299,19 @@ public class ContactData {
   public ContactData withHomeaddress(String homeaddress) {
     this.homeaddress = homeaddress;
     return this;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    ContactData that = (ContactData) o;
+    return id == that.id && Objects.equals(name, that.name) && Objects.equals(middlename, that.middlename) && Objects.equals(lastname, that.lastname) && Objects.equals(nickname, that.nickname) && Objects.equals(title, that.title) && Objects.equals(company, that.company) && Objects.equals(address, that.address) && Objects.equals(homephone, that.homephone) && Objects.equals(mobilephone, that.mobilephone) && Objects.equals(workphone, that.workphone) && Objects.equals(email, that.email) && Objects.equals(bday, that.bday) && Objects.equals(bmonth, that.bmonth) && Objects.equals(byear, that.byear) && Objects.equals(allphones, that.allphones) && Objects.equals(allemails, that.allemails);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, name, middlename, lastname, nickname, title, company, address, homephone, mobilephone, workphone, email, bday, bmonth, byear, allphones, allemails);
   }
 
   public ContactData withWorkphone(String workphone) {
@@ -325,6 +340,7 @@ public class ContactData {
             ", address='" + address + '\'' +
             ", homephone='" + homephone + '\'' +
             ", mobilephone='" + mobilephone + '\'' +
+            ", workphone='" + workphone + '\'' +
             ", email='" + email + '\'' +
             ", email2='" + email2 + '\'' +
             ", email3='" + email3 + '\'' +
@@ -333,28 +349,10 @@ public class ContactData {
             ", byear='" + byear + '\'' +
             ", group='" + group + '\'' +
             ", homeaddress='" + homeaddress + '\'' +
-            ", workphone='" + workphone + '\'' +
-            ", allphones='" + allphones+ '\'' +
-            ", allemails='" + allemails+ '\'' +
+            ", allphones='" + allphones + '\'' +
+            ", allemails='" + allemails + '\'' +
+            ", photo='" + photo + '\'' +
             '}';
   }
-
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    ContactData that = (ContactData) o;
-    return id == that.id && Objects.equals(name, that.name) && Objects.equals(lastname, that.lastname);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, name, lastname);
-  }
-
-
-
 
 }

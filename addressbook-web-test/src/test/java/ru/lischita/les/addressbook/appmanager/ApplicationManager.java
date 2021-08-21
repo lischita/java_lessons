@@ -22,6 +22,7 @@ public class ApplicationManager {
   private ContactHelper contactHelper;
   private String browser;
   public Properties properties;
+  private DBHelper dbHelper;
 
 
   public ApplicationManager(String browser) {
@@ -32,6 +33,7 @@ public class ApplicationManager {
   public void init() throws IOException {
     String target=System.getProperty("target","local");  //local имя файла  .properties по умолчанию передаваемое в командной строке если будет отсуствовать атрибут target gradlew -Pbrowser=firefox,target=local testContacts
     properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties",target))));
+    dbHelper=new DBHelper();
     if(browser.equals(BrowserType.CHROME)) {
       System.setProperty("webdriver.chrome.driver", properties.getProperty("webdriver.chrome"));//System.setProperty("webdriver.chrome.driver", "C:\\Users\\Елизавета Криворучка\\Desktop\\world\\chromedriver.exe");
       wd = new ChromeDriver();
@@ -76,5 +78,9 @@ public class ApplicationManager {
 
   public ContactHelper contact() {
     return contactHelper;
+  }
+
+  public DBHelper db(){
+    return dbHelper;
   }
 }

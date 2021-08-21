@@ -48,7 +48,7 @@
       <recent name="ru.lischita.les.addressbook.model" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.HBConnectionContactTest">
+  <component name="RunManager" selected="TestNG.DBContactDeleteTest">
     <configuration name="ContactDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.generator.ContactDataGenerator" />
       <module name="addressbook-web-test.test" />
@@ -63,21 +63,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GroupDataGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.generator.GroupDataGenerator" />
-      <module name="addressbook-web-test.test" />
-      <option name="PROGRAM_PARAMETERS" value="-c 2 -f src/test/resurces/groups.csv -d csv" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.lischita.les.addressbook.generator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ContactCreationTests" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DBContactCreationTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
         <pattern>
@@ -86,7 +72,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.ContactCreationTests" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBContactCreationTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -94,7 +80,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContactEditTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DBContactDeleteTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
         <pattern>
@@ -103,7 +89,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.ContactEditTest" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBContactDeleteTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -111,7 +97,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBConnectionTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DBContactEditTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
         <pattern>
@@ -120,7 +106,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBConnectionTest" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBContactEditTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -128,7 +114,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HBConnectionContactTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DBGroupCreationTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
         <pattern>
@@ -137,7 +123,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.HBConnectionContactTest" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBGroupCreationTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -145,7 +131,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HBConnectionTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DBGroupDeletionTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
         <pattern>
@@ -154,7 +140,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.HBConnectionTest" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBGroupDeletionTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -164,19 +150,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.ContactDataGenerator" />
-      <item itemvalue="Application.GroupDataGenerator" />
-      <item itemvalue="TestNG.ContactEditTest" />
-      <item itemvalue="TestNG.DBConnectionTest" />
-      <item itemvalue="TestNG.HBConnectionTest" />
-      <item itemvalue="TestNG.HBConnectionContactTest" />
+      <item itemvalue="TestNG.DBContactEditTest" />
+      <item itemvalue="TestNG.DBGroupDeletionTests" />
+      <item itemvalue="TestNG.DBGroupCreationTests" />
+      <item itemvalue="TestNG.DBContactCreationTests" />
+      <item itemvalue="TestNG.DBContactDeleteTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.HBConnectionContactTest" />
-        <item itemvalue="TestNG.HBConnectionTest" />
-        <item itemvalue="TestNG.DBConnectionTest" />
-        <item itemvalue="TestNG.ContactEditTest" />
-        <item itemvalue="Application.GroupDataGenerator" />
+        <item itemvalue="TestNG.DBContactDeleteTest" />
+        <item itemvalue="TestNG.DBContactEditTest" />
+        <item itemvalue="TestNG.DBContactCreationTests" />
+        <item itemvalue="TestNG.DBGroupCreationTests" />
+        <item itemvalue="TestNG.DBGroupDeletionTests" />
       </list>
     </recent_temporary>
   </component>

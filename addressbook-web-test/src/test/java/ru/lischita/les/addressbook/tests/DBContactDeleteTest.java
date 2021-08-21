@@ -5,39 +5,43 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.lischita.les.addressbook.model.ContactData;
 import ru.lischita.les.addressbook.model.Contacts;
+import ru.lischita.les.addressbook.model.GroupData;
+import ru.lischita.les.addressbook.model.Groups;
+
+import java.io.File;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class ContactEditTest extends TestBase {
+
+public class DBContactDeleteTest extends TestBase{
 
   @BeforeMethod
   public void ensurePreconditions(){
-    app.goTo().HomePage();
-    if(app.contact().all().size()==0)
-    {
+    if(app.db().contacts().size()==0) {
+      app.goTo().HomePage();
       app.contact().crate(new ContactData().withName("Дмитрий").withMiddlename("Тестович").withLastname("Петрович")
               .withNickname("Тестер").withTitle("Тестировщик").withCompany("Тест-Комплект").withAddress("г.Москва Тестовая дом 13")
               .withHomephone("8-495-123-56-78").withMobilephone("8-976-456-67-87").withEmail("test@test_complect.ru")
               .withBday("11").withBmonth("May").withByear("1980").withGroup("test1").withHomeaddress("г. Москва, ул. Тестиррования  дом 13")
-              .withWorkphone("495-123-45-67"));
+              .withWorkphone("495-123-45-67").withPhoto(new File("src/test/resources/photo_0.jpg")));
     }
+
   }
 
-@Test
-  public void testContactEdit()
+  @Test
+  public void testContactDelete()
   {
+    Contacts before=app.db().contacts();
+    ContactData deleteContact=before.iterator().next();
     app.goTo().HomePage();
-    Contacts before=app.contact().all();
-    ContactData contactGroup=before.iterator().next();
-    ContactData contact =new ContactData().withId(contactGroup.getId()).withName("Яков").withLastname("Ронинсон");
-    app.contact().modify(contact);
-    app.goTo().HomePage();
-    Contacts after=app.contact().all();
-    Assert.assertEquals(after.size(),before.size());
-    //assertThat(after,equalTo(before.withOut(contactGroup).withAdded(contact)));
-    Assert.assertEquals(before.withModify(contactGroup,contact).hashCode(),after.hashCode());
-    assertThat(after,equalTo(before.withModify(contactGroup,contact)));
+    app.contact().delete(deleteContact);
+    Contacts after=app.db().contacts();
+    ///Assert.assertEquals(after.size(), before.size() -1);
+    //Assert.assertEquals(before.withOut(deleteContact).hashCode(),after.hashCode());
+    assertThat(after, equalTo(before.withOut(deleteContact)));
   }
+
 }
+
 

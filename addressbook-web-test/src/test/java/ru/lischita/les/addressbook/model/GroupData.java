@@ -80,12 +80,18 @@ public class GroupData {
     return this;
   }
 
-  @Override
+   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     GroupData groupData = (GroupData) o;
-    return id == groupData.id && Objects.equals(name, groupData.name);
+    return id == groupData.id && Objects.equals(name, groupData.name) && Objects.equals(header, groupData.header) && Objects.equals(footer, groupData.footer);
+  }// когда не с БД  сравниваем только по имени  return id == groupData.id && Objects.equals(name, groupData.name);, а когда с БД по всем полям
+  // поэтому или нужно перегенерировать equals или писать новую
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, name, header, footer);
   }
 
   @Override
@@ -98,8 +104,4 @@ public class GroupData {
             '}';
   }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, name);
-  }
 }
