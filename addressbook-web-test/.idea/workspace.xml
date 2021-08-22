@@ -63,23 +63,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBContactCreationTests" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="addressbook-web-test.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.lischita.les.addressbook.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBContactCreationTests" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DBContactDeleteTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
@@ -114,36 +97,58 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBGroupCreationTests" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DBGroupModificationTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ru.lischita.les.addressbook.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBGroupCreationTests" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBGroupModificationTests" />
+      <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea -DverifyUI=true" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBGroupDeletionTests" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ru.lischita.les.addressbook.tests.DBContactCreationTests and 2 more" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.lischita.les.addressbook.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBGroupDeletionTests" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="TEST_OBJECT" value="PATTERN" />
       <properties />
       <listeners />
+      <patterns>
+        <pattern testClass="ru.lischita.les.addressbook.tests.DBContactCreationTests" />
+        <pattern testClass="ru.lischita.les.addressbook.tests.DBContactDeleteTest" />
+        <pattern testClass="ru.lischita.les.addressbook.tests.DBContactEditTest" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ru.lischita.les.addressbook.tests.DBGroupCreationTests and 2 more" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-test.test" />
+      <option name="TEST_OBJECT" value="PATTERN" />
+      <properties />
+      <listeners />
+      <patterns>
+        <pattern testClass="ru.lischita.les.addressbook.tests.DBGroupCreationTests" />
+        <pattern testClass="ru.lischita.les.addressbook.tests.DBGroupDeletionTests" />
+        <pattern testClass="ru.lischita.les.addressbook.tests.DBGroupModificationTests" />
+      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -151,18 +156,18 @@
     <list>
       <item itemvalue="Application.ContactDataGenerator" />
       <item itemvalue="TestNG.DBContactEditTest" />
-      <item itemvalue="TestNG.DBGroupDeletionTests" />
-      <item itemvalue="TestNG.DBGroupCreationTests" />
-      <item itemvalue="TestNG.DBContactCreationTests" />
       <item itemvalue="TestNG.DBContactDeleteTest" />
+      <item itemvalue="TestNG.DBGroupModificationTests" />
+      <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.DBGroupCreationTests and 2 more" />
+      <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.DBContactCreationTests and 2 more" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.DBContactEditTest" />
+        <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.DBContactCreationTests and 2 more" />
+        <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.DBGroupCreationTests and 2 more" />
+        <item itemvalue="TestNG.DBGroupModificationTests" />
         <item itemvalue="TestNG.DBContactDeleteTest" />
-        <item itemvalue="TestNG.DBContactCreationTests" />
-        <item itemvalue="TestNG.DBGroupCreationTests" />
-        <item itemvalue="TestNG.DBGroupDeletionTests" />
       </list>
     </recent_temporary>
   </component>

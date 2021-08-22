@@ -355,7 +355,7 @@ public class ContactData {
             ", homeaddress='" + homeaddress + '\'' +
             ", allphones='" + allphones + '\'' +
             ", allemails='" + allemails + '\'' +
-            ", photo='" + photo + '\'' +
+           // ", photo='" + photo + '\'' +
             '}';
   }
 

@@ -1,6 +1,5 @@
 package ru.lischita.les.addressbook.tests;
 
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.lischita.les.addressbook.model.GroupData;
@@ -30,5 +29,8 @@ public class DBGroupModificationTests extends TestBase{
     assertThat(app.group().count(),equalTo(before.size()));
     Groups after=app.db().groups();
     assertThat(after,equalTo(before.withOut(modifydGroup).withAdded(group)));
+    verifyInGroupListInUI();
   }
+
+
 }

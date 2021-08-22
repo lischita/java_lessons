@@ -24,6 +24,8 @@ public class DBContactCreationTests extends TestBase
     Assert.assertEquals(app.contact().all().size(), before.size() + 1);
     Contacts after = app.db().contacts();
     assertThat(after, equalTo(before.withAdded(contacts.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
+    verifyInContactListInUI();
+
   }
 
 

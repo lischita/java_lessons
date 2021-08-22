@@ -8,10 +8,18 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import ru.lischita.les.addressbook.appmanager.ApplicationManager;
+import ru.lischita.les.addressbook.model.ContactData;
+import ru.lischita.les.addressbook.model.Contacts;
+import ru.lischita.les.addressbook.model.GroupData;
+import ru.lischita.les.addressbook.model.Groups;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Method;
 import java.util.Arrays;
+import java.util.stream.Collectors;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
 
 public class TestBase {
   Logger logger = LoggerFactory.getLogger(TestBase.class);
@@ -39,5 +47,20 @@ public class TestBase {
   public void logTestStop(Method m){
     logger.info("Stop method "+m.getName());}
 
-
+  public void verifyInGroupListInUI() {
+    if (Boolean.getBoolean("verifyUI")) {    // проверяем если сисетммное свойство true, то выполняем иначе нет
+      Groups dbGroups = app.db().groups();
+      Groups uiGroups = app.group().all();
+      assertThat(uiGroups, equalTo(dbGroups.stream().map((g) -> new GroupData().withId(g.getId()).withName(g.getName())).collect(Collectors.toSet())));
+      // сравниваем то что получили из БД с тем что есть в UI ghb этом данные из БД упрощаем, создаем новое множество где присуствуют только Id и name группы
+    }
+  }
+  public void verifyInContactListInUI() {
+    if (Boolean.getBoolean("verifyUI")) {    // проверяем если сисетммное свойство true, то выполняем иначе нет
+      Contacts dbContacts = app.db().contacts();
+      Contacts uiContacts = app.contact().all();
+      assertThat(uiContacts, equalTo(dbContacts.stream().map((c) -> new ContactData().withId(c.getId()).withName(c.getName())).collect(Collectors.toSet())));
+      // сравниваем то что получили из БД с тем что есть в UI ghb этом данные из БД упрощаем, создаем новое множество где присуствуют только Id и name группы
+    }
+  }
 }
