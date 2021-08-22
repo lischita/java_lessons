@@ -41,6 +41,7 @@ public class DBHBConnectionTest {
     for ( GroupData group : (List<GroupData>) result ) // можно убрать преобразование типа, указав ранее тип result kak  List<GroupData>, а не List
     {
       System.out.println(group);
+
     }
     session.getTransaction().commit();
     session.close();

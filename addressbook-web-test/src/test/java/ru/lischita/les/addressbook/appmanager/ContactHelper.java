@@ -4,6 +4,7 @@ import org.openqa.selenium.*;
 import org.testng.Assert;
 import ru.lischita.les.addressbook.model.ContactData;
 import ru.lischita.les.addressbook.model.Contacts;
+import ru.lischita.les.addressbook.model.GroupData;
 
 import java.util.List;
 
@@ -37,8 +38,18 @@ public class ContactHelper extends HelperBase {
 
     type(By.name("byear"), contactData.getByear());
 
-    if (creation){select(By.name("new_group"), contactData.getGroup());}
+   // if (creation){select(By.name("new_group"), contactData.getGroup());}  // Убрали перед ДЗ№16
+   // else { Assert.assertFalse(IsElementPresent(By.name("new_group")));}
+
+    if (creation){      // Вставили перед ДЗ№16
+      if (contactData.getGroups().size()>0);
+      {
+      Assert.assertTrue(contactData.getGroups().size()==1);
+      select(By.name("new_group"), contactData.getGroups().iterator().next().getName());
+    }
+    }
     else { Assert.assertFalse(IsElementPresent(By.name("new_group")));}
+
 
     type(By.name("phone2"), contactData.getHomeaddress());
     type(By.name("work"), contactData.getWorkphone());
@@ -99,6 +110,13 @@ public class ContactHelper extends HelperBase {
     contactsCache=null;
  }
 
+  public void addInGroup(ContactData contact, GroupData group){
+    selectContactById(contact.getId());
+    select(By.name("to_group"), group.getName());
+    click(By.name("add"));
+    contactsCache=null;
+
+  }
 
 
 

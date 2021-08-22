@@ -65,7 +65,7 @@ public class ContactDataGenerator {
               .withBday("11")
               .withBmonth("May")
               .withByear("1980")
-              .withGroup("test1")
+             // .withGroup("test1")  убрал перед выподнением ДЗ 16
               .withHomeaddress(String.format("г. Москва, ул. Тестиррования  дом 13 %s",i))
               .withWorkphone(String.format("495-123-45-67 %s",i))
               .withPhoto(photo));

@@ -7,7 +7,9 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.File;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @XStreamAlias("contact") // указываем что в xml использовать тег contact
 @Entity
@@ -62,8 +64,13 @@ public class ContactData {
   @Expose // указываем что это поле обязательно жолжно быть в json файле
   private  String byear;
   @Expose // указываем что это поле обязательно жолжно быть в json файле
-  @Transient // используем эту аннтацию если поле не извлекаем из базы  когда используем HBConnectionTest
-  private  String group;
+
+  //@Transient // используем эту аннтацию если поле не извлекаем из базы  когда используем HBConnectionTest
+ /// private  String group;  // Удалили перед выполнением ДЗ№16
+  @ManyToMany (fetch = FetchType.EAGER)
+  @JoinTable(name="address_in_groups",joinColumns = @JoinColumn(name="id"),inverseJoinColumns = @JoinColumn(name="group_id")) //joinColumns = @JoinColumn(name="id") столбец указывает на Контакты,   inverseJoinColumns = @JoinColumn(name="group_id") обратный столбец, указывает на группы
+  private Set<GroupData> groups=new HashSet<GroupData>(); // встаили для ДЗ№16  Группы в которые могут входить контакты
+
   @Expose // указываем что это поле обязательно жолжно быть в json файле
   @Column (name="address2")
   @Type(type="text")
@@ -79,6 +86,8 @@ public class ContactData {
   @Type(type="text")
   //private   File photo; //было до аодключения к БД
   private String photo; // когда подключаем БД  HBConnectionTest
+
+
 
 
   /*public ContactData(int id,String name, String middlename, String lastname, String nickname, String title, String company, String address, String homephone, String mobilephone, String email, String bday, String bmonth, String byear, String group, String homeaddress) {
@@ -179,8 +188,10 @@ public class ContactData {
     return byear;
   }
 
-  public String getGroup() {
-    return group;
+ //public String getGroup() { return group; } // Удалили перед выполнением ДЗ№16
+
+  public Groups getGroups() {  // Добавили перед выполнением ДЗ№16
+    return new Groups(groups);
   }
 
   public String getHomeaddress() {
@@ -296,10 +307,11 @@ public class ContactData {
     return this;
   }
 
-  public ContactData withGroup(String group) {
+ /* public ContactData withGroup(String group) {   // Удалили перед выполнением ДЗ№16
     this.group = group;
     return this;
-  }
+  }*/
+
   public ContactData withHomeaddress(String homeaddress) {
     this.homeaddress = homeaddress;
     return this;
@@ -331,6 +343,12 @@ public class ContactData {
     return this;
   }
 
+  public ContactData inGroup(GroupData group)
+  {
+    groups.add(group);
+    return this;
+  }
+
   @Override
   public String toString() {
     return "ContactData{" +
@@ -351,7 +369,7 @@ public class ContactData {
             ", bday='" + bday + '\'' +
             ", bmonth='" + bmonth + '\'' +
             ", byear='" + byear + '\'' +
-            ", group='" + group + '\'' +
+            //", group='" + group + '\'' + //// Удалили перед выполнением ДЗ№16
             ", homeaddress='" + homeaddress + '\'' +
             ", allphones='" + allphones + '\'' +
             ", allemails='" + allemails + '\'' +
