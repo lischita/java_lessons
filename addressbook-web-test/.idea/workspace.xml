@@ -48,7 +48,7 @@
       <recent name="ru.lischita.les.addressbook.model" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.DBContactDeleteTest">
+  <component name="RunManager" selected="TestNG.DBContactEditTest">
     <configuration name="ContactDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.generator.ContactDataGenerator" />
       <module name="addressbook-web-test.test" />
@@ -158,8 +158,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.DBContactDeleteTest" />
         <item itemvalue="TestNG.DBContactEditTest" />
+        <item itemvalue="TestNG.DBContactDeleteTest" />
         <item itemvalue="TestNG.DBContactCreationTests" />
         <item itemvalue="TestNG.DBGroupCreationTests" />
         <item itemvalue="TestNG.DBGroupDeletionTests" />

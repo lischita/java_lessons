@@ -3,6 +3,7 @@ package ru.lischita.les.addressbook.tests;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import ru.lischita.les.addressbook.appmanager.ContactHelper;
 import ru.lischita.les.addressbook.model.ContactData;
 import ru.lischita.les.addressbook.model.Contacts;
 import ru.lischita.les.addressbook.model.GroupData;
@@ -34,11 +35,8 @@ public class DBContactEditTest extends TestBase {
     ContactData contactGroup=before.iterator().next();
     ContactData contact =new ContactData().withId(contactGroup.getId()).withName("Яков").withLastname("Ронинсон");
     app.goTo().HomePage();
-    app.contact().modify(contact);
+    Assert.assertEquals(app.contact().all().size(), before.size() );
     Contacts after=app.db().contacts();
-   // Assert.assertEquals(after.size(),before.size());
-    //Assert.assertEquals(before.withModify(contactGroup,contact).hashCode(),after.hashCode());
     assertThat(after,equalTo(before.withModify(contactGroup,contact)));
   }
 }
-

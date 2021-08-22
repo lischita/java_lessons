@@ -199,7 +199,11 @@ public class ContactData {
   }
 
   // public File getPhoto() { return photo;}//было до аодключения к БД
-  public File getPhoto() {return new File(photo);}
+  public File getPhoto() {
+    if (photo != null) {
+      return new File(photo);
+    } else return new File("");
+  }
 
 /* public ContactData withPhoto(File photo) {
     this.photo = photo;

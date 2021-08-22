@@ -179,5 +179,9 @@ public class ContactHelper extends HelperBase {
     return new ContactData().withId(contact.getId()).withName(name).withLastname(lastname).withHomephone(home).withMobilephone(mobile).withWorkphone(work)
             .withHomeaddress(homeaddress).withEmail(email).withEmail2(email2).withEmail3(email3).withAddress(address);
   }
+  public int count() {
+    return wd.findElements(By.name("entry")).size();
+  }
+
 }
 

@@ -34,14 +34,13 @@ public class DBContactDeleteTest extends TestBase{
   {
     Contacts before=app.db().contacts();
     ContactData deleteContact=before.iterator().next();
-    app.goTo().HomePage();
     app.contact().delete(deleteContact);
+    app.goTo().HomePage();
+    Assert.assertEquals(app.contact().all().size(), before.size() - 1);
     Contacts after=app.db().contacts();
-    ///Assert.assertEquals(after.size(), before.size() -1);
-    //Assert.assertEquals(before.withOut(deleteContact).hashCode(),after.hashCode());
     assertThat(after, equalTo(before.withOut(deleteContact)));
   }
-
 }
+
 
 

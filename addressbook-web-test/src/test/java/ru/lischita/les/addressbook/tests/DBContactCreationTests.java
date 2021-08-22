@@ -19,12 +19,10 @@ public class DBContactCreationTests extends TestBase
             .withMobilephone("8-976-456-67-87").withEmail("test@test_complect.ru").withBday("11").withBmonth("May").withByear("1980")
             .withGroup("test1").withHomeaddress("г. Москва, ул. Тестиррования  дом 13").withWorkphone("495-123-45-67")
             .withPhoto((new File("src/test/resources/photo_0.jpg")));
-    app.goTo().HomePage();
     app.contact().crate(contacts);
-    //Assert.assertEquals( app.contact().all(), before.size() + 1);
+    app.goTo().HomePage();
+    Assert.assertEquals(app.contact().all().size(), before.size() + 1);
     Contacts after = app.db().contacts();
-    //Assert.assertEquals(after.size(), before.size() + 1);
-   // Assert.assertEquals(before.withAdded(contacts.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt())).hashCode(), after.hashCode());
     assertThat(after, equalTo(before.withAdded(contacts.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
   }
 
