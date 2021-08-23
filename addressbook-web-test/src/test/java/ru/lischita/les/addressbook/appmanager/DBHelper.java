@@ -34,6 +34,20 @@ public class DBHelper {
     return new Groups(result);
   }
 
+  public ContactData contactfromDB (ContactData contact){
+    Session session = sessionFactory.openSession();
+    session.beginTransaction();
+    List<ContactData> result = session.createQuery( "from ContactData where deprecated='0000-00-00'" ).list(); // извелкаем объект OQL ( object query language )
+    for ( ContactData count : result)
+    {
+     if(contact.equals(count))
+     {return count;}
+      }
+    session.getTransaction().commit();
+    session.close();
+    return null;
+  }
+
   public Contacts contacts (){
     Session session = sessionFactory.openSession();
     session.beginTransaction();

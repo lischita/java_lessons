@@ -12,11 +12,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DBAddContactInGroupTest extends TestBase {
+  DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+  Date date = new Date();
+
   @BeforeMethod
   public void ensurePreconditions() {
-    DateFormat dateFormat = new SimpleDateFormat("yyyy_MM_dd_HH:mm:ss");
-    Date date = new Date();
-    if (app.db().groups().size() == 0) {
+      if (app.db().groups().size() == 0) {
       app.goTo().groupPage();
       app.group().create(new GroupData().withName("test_"+ dateFormat.format(date)).withFooter("test2").withHeader("test3"));
     }
@@ -24,7 +25,7 @@ public class DBAddContactInGroupTest extends TestBase {
       Groups dbGroups = app.db().groups();
       GroupData group = dbGroups.iterator().next();
       app.goTo().HomePage();
-      app.contact().crate(new ContactData().withName("Дмитрий").withMiddlename("Тестович").withLastname("Петрович")
+      app.contact().crate(new ContactData().withName("Дмитрий").withMiddlename("Тестович").withLastname("Иванов")
               .withNickname("Тестер").withTitle("Тестировщик").withCompany("Тест-Комплект").withAddress("г.Москва Тестовая дом 13")
               .withHomephone("8-495-123-56-78").withMobilephone("8-976-456-67-87").withEmail("test@test_complect.ru")
               .withBday("11").withBmonth("May").withByear("1980")
@@ -36,43 +37,29 @@ public class DBAddContactInGroupTest extends TestBase {
 
   @Test
   public void testAddContactInGroup() throws Exception {
-    DateFormat dateFormat = new SimpleDateFormat("yyyy_MM_dd_HH:mm:ss");
-    Date date = new Date();
     Groups dbGroups = app.db().groups();
     Contacts dbContacts = app.db().contacts();
     app.goTo().HomePage();
     ContactData selectContact = dbContacts.iterator().next();
-    if (selectContact.getGroups().equals(dbGroups)) {
+    if (selectContact.getGroups().equals(dbGroups))
+    {
       app.goTo().groupPage();
       app.group().create(new GroupData().withName("test_"+ dateFormat.format(date)).withFooter("test2").withHeader("test3"));
       dbGroups = app.db().groups();
-    }
+     }
     for (GroupData group : dbGroups) {
-    Contacts before = group.getContacts();
-    app.goTo().HomePage();
-    app.contact().addInGroup(selectContact, group);
-    Contacts after=app.db().contacts();
-    Assert.assertEquals(after,before.withAdded(selectContact));
+      if(selectContact.getGroups().contains(group))
+      {
+        System.out.println(group+" Группа в контакт"+selectContact.getId()+ " не бобавлена, так как там уже присутствует ");
+      }
+        else
+        {Groups before=selectContact.getGroups();
+        app.goTo().HomePage();
+        app.contact().addInGroup(selectContact, group);
+        Groups after=app.db().contactfromDB(selectContact).getGroups();
+        Assert.assertEquals(after,before.withAdded(group));
+        }
     }
   }
- /* @Test
-  public void testDeleteContactFromGroup() throws Exception {
-    Groups dbGroups = app.db().groups();
-    Contacts dbContacts = app.db().contacts();
-    app.goTo().HomePage();
-    ContactData selectContact = dbContacts.iterator().next();
-    if (selectContact.getGroups().equals(dbGroups)) {
-      app.goTo().groupPage();
-      app.group().create(new GroupData().withName("test10").withFooter("test2").withHeader("test3"));
-      dbGroups = app.db().groups();
-    }
-    for (GroupData group : dbGroups) {
-      Contacts before = group.getContacts();
-      app.goTo().HomePage();
-      app.contact().addInGroup(selectContact, group);
-      System.out.println(group.getContacts());
-      Contacts after=app.db().contacts();
-      Assert.assertEquals(after,before.withAdded(selectContact));
-    }
-  }*/
+
  }

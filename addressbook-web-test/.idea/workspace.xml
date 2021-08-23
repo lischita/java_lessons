@@ -80,7 +80,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBContactDeleteTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DBAddContactInGroupTest.testAddContactInGroup" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
         <pattern>
@@ -89,15 +89,16 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBContactDeleteTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBAddContactInGroupTest" />
+      <option name="METHOD_NAME" value="testAddContactInGroup" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBContactEditTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DBAddContactInGroupTest.testDeleteContactFromGroup" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
         <pattern>
@@ -106,15 +107,16 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBContactEditTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBAddContactInGroupTest" />
+      <option name="METHOD_NAME" value="testDeleteContactFromGroup" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBHBConnectionContactTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DBDeleteContactFromGroupTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
         <pattern>
@@ -123,7 +125,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBHBConnectionContactTest" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBDeleteContactFromGroupTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -131,15 +133,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ru.lischita.les.addressbook.tests.DBContactCreationTests and 2 more" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ru.lischita.les.addressbook.tests.DBDeleteContactFromGroupTest and 1 more" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
       <option name="TEST_OBJECT" value="PATTERN" />
       <properties />
       <listeners />
       <patterns>
-        <pattern testClass="ru.lischita.les.addressbook.tests.DBContactCreationTests" />
-        <pattern testClass="ru.lischita.les.addressbook.tests.DBContactDeleteTest" />
-        <pattern testClass="ru.lischita.les.addressbook.tests.DBContactEditTest" />
+        <pattern testClass="ru.lischita.les.addressbook.tests.DBDeleteContactFromGroupTest" />
+        <pattern testClass="ru.lischita.les.addressbook.tests.DBAddContactInGroupTest" />
       </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,19 +148,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.ContactDataGenerator" />
-      <item itemvalue="TestNG.DBContactEditTest" />
-      <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.DBContactCreationTests and 2 more" />
-      <item itemvalue="TestNG.DBHBConnectionContactTest" />
       <item itemvalue="TestNG.DBAddContactInGroupTest" />
-      <item itemvalue="TestNG.DBContactDeleteTest" />
+      <item itemvalue="TestNG.DBAddContactInGroupTest.testDeleteContactFromGroup" />
+      <item itemvalue="TestNG.DBAddContactInGroupTest.testAddContactInGroup" />
+      <item itemvalue="TestNG.DBDeleteContactFromGroupTest" />
+      <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.DBDeleteContactFromGroupTest and 1 more" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.DBAddContactInGroupTest" />
-        <item itemvalue="TestNG.DBContactDeleteTest" />
-        <item itemvalue="TestNG.DBHBConnectionContactTest" />
-        <item itemvalue="TestNG.DBContactEditTest" />
-        <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.DBContactCreationTests and 2 more" />
+        <item itemvalue="TestNG.DBDeleteContactFromGroupTest" />
+        <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.DBDeleteContactFromGroupTest and 1 more" />
+        <item itemvalue="TestNG.DBAddContactInGroupTest.testAddContactInGroup" />
+        <item itemvalue="TestNG.DBAddContactInGroupTest.testDeleteContactFromGroup" />
       </list>
     </recent_temporary>
   </component>
@@ -173,5 +174,16 @@
       <updated>1626522059052</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ru/lischita/les/addressbook/tests/DBDeleteContactFromGroupTest.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

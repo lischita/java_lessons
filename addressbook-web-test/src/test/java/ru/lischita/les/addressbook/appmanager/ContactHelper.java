@@ -115,9 +115,14 @@ public class ContactHelper extends HelperBase {
     select(By.name("to_group"), group.getName());
     click(By.name("add"));
     contactsCache=null;
-
   }
 
+  public void delfromGroup(ContactData contact, GroupData group) {
+    select(By.name("group"), group.getName());
+    selectContactById(contact.getId());
+    click(By.name("remove"));
+    contactsCache=null;
+  }
 
 
   public boolean isAThereContact() {
