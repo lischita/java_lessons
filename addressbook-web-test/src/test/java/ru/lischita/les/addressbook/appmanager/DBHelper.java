@@ -34,6 +34,20 @@ public class DBHelper {
     return new Groups(result);
   }
 
+  public GroupData groupfromDB (GroupData group) {
+    Session session = sessionFactory.openSession();
+    session.beginTransaction();
+    List<GroupData> result = session.createQuery("from GroupData").list();  // извелкаем объект OQL ( object query language )
+    for (GroupData count : result) {
+      if (group.equals(count)) {
+        return count;
+      }
+    }
+    session.getTransaction().commit();
+    session.close();
+    return null;
+  }
+
   public ContactData contactfromDB (ContactData contact){
     Session session = sessionFactory.openSession();
     session.beginTransaction();
@@ -47,6 +61,7 @@ public class DBHelper {
     session.close();
     return null;
   }
+
 
   public Contacts contacts (){
     Session session = sessionFactory.openSession();

@@ -48,7 +48,7 @@
       <recent name="ru.lischita.les.addressbook.model" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.DBAddContactInGroupTest">
+  <component name="RunManager" selected="TestNG.DBDeleteContactFromGroupTest">
     <configuration name="ContactDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.generator.ContactDataGenerator" />
       <module name="addressbook-web-test.test" />
@@ -98,24 +98,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBAddContactInGroupTest.testDeleteContactFromGroup" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="addressbook-web-test.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.lischita.les.addressbook.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBAddContactInGroupTest" />
-      <option name="METHOD_NAME" value="testDeleteContactFromGroup" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DBDeleteContactFromGroupTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-test.test" />
       <extension name="coverage">
@@ -129,6 +111,19 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ru.lischita.les.addressbook.tests.DBAddContactInGroupTest and 1 more" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-test.test" />
+      <option name="TEST_OBJECT" value="PATTERN" />
+      <properties />
+      <listeners />
+      <patterns>
+        <pattern testClass="ru.lischita.les.addressbook.tests.DBAddContactInGroupTest" />
+        <pattern testClass="ru.lischita.les.addressbook.tests.DBDeleteContactFromGroupTest" />
+      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -149,18 +144,18 @@
     <list>
       <item itemvalue="Application.ContactDataGenerator" />
       <item itemvalue="TestNG.DBAddContactInGroupTest" />
-      <item itemvalue="TestNG.DBAddContactInGroupTest.testDeleteContactFromGroup" />
       <item itemvalue="TestNG.DBAddContactInGroupTest.testAddContactInGroup" />
       <item itemvalue="TestNG.DBDeleteContactFromGroupTest" />
       <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.DBDeleteContactFromGroupTest and 1 more" />
+      <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.DBAddContactInGroupTest and 1 more" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.DBAddContactInGroupTest" />
         <item itemvalue="TestNG.DBDeleteContactFromGroupTest" />
+        <item itemvalue="TestNG.DBAddContactInGroupTest" />
+        <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.DBAddContactInGroupTest and 1 more" />
         <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.DBDeleteContactFromGroupTest and 1 more" />
         <item itemvalue="TestNG.DBAddContactInGroupTest.testAddContactInGroup" />
-        <item itemvalue="TestNG.DBAddContactInGroupTest.testDeleteContactFromGroup" />
       </list>
     </recent_temporary>
   </component>
@@ -174,16 +169,5 @@
       <updated>1626522059052</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/ru/lischita/les/addressbook/tests/DBDeleteContactFromGroupTest.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -13,8 +13,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-public class DBDeleteContactFromGroupTest extends TestBase  {
+public class DBDeleteContactFromGroupTest extends TestBase {
   DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
   Date date = new Date();
 
@@ -22,7 +23,7 @@ public class DBDeleteContactFromGroupTest extends TestBase  {
   public void ensurePreconditions() {
     if (app.db().groups().size() == 0) {
       app.goTo().groupPage();
-      app.group().create(new GroupData().withName("test_"+ dateFormat.format(date)).withFooter("test2").withHeader("test3"));
+      app.group().create(new GroupData().withName("test_" + dateFormat.format(date)).withFooter("test2").withHeader("test3"));
     }
     if (app.db().contacts().size() == 0) {
       Groups dbGroups = app.db().groups();
@@ -39,67 +40,40 @@ public class DBDeleteContactFromGroupTest extends TestBase  {
 
   @Test
   public void testDeleteContactFromGroup() throws Exception {
-   Groups dbGroups = app.db().groups();
-   Contacts dbContacts=app.db().contacts();
-   Iterator <GroupData> group = dbGroups.iterator();
-    while(group.hasNext()){
-      Contacts before=group.next().getContacts(); // список всех контактов в группе до удаления
-      if(before.isEmpty())
-     { System.out.println("yes "+ before);
-       /*ContactData selectContact = dbContacts.iterator().next();
-       Groups before = selectContact.getGroups();
-       app.goTo().HomePage();
-       app.contact().delfromGroup(selectContact, group.next());
-       Groups after = app.db().contactfromDB(selectContact).getGroups();
-       Assert.assertEquals(after, before.withOut(group.next()));*/
-     }
-     else
-       {System.out.println("no "+ before.stream().mapToInt((c) -> c.getId()).max().getAsInt());
-       ContactData deleteContact=dbContacts.iterator().next().withId(before.stream().mapToInt((c) -> c.getId()).max().getAsInt()); // из всех контактов принадлежащих группе выбираю с максимальным id
-       System.out.println("no " +deleteContact);
-       //app.goTo().HomePage();
-       //app.contact().delfromGroup(deleteContact, group.next()); ?? как определить группу
-     }
+    Groups dbGroups = app.db().groups();
+    Contacts dbContacts = app.db().contacts();
+    Iterator<GroupData> iter = dbGroups.iterator();
+    GroupData group = iter.next();
+    boolean it = iter.hasNext();
+    try {
+      while (it) {
+        Contacts before = group.getContacts(); // список всех контактов в группе до удаления
+        if (before.isEmpty()) {
+          group = iter.next();
+        } else {
+          before = group.getContacts();
+          ContactData deleteContact = dbContacts.iterator().next().withId(before.stream().mapToInt((c) -> c.getId()).max().getAsInt()); // из всех контактов принадлежащих группе выбираю с максимальным id
+          app.goTo().HomePage();
+          app.contact().delfromGroup(deleteContact, group);
+          Contacts after = app.db().groupfromDB(group).getContacts();
+          Assert.assertEquals(after, before.withOut(deleteContact));
+          it = false;
+        }
+      }
+    } catch (NoSuchElementException e) {
+      AddContactInGroup();
+      testDeleteContactFromGroup();
+    }
+  }
+
+  public void AddContactInGroup() throws Exception {
+    Groups dbGroups = app.db().groups();
+    Contacts dbContacts = app.db().contacts();
+    ContactData selectContact = dbContacts.iterator().next();
+    GroupData group = dbGroups.iterator().next();
+    app.goTo().HomePage();
+    app.contact().addInGroup(selectContact, group);
+      }
     }
 
-  //  System.out.println("Буаа  "+ before);
 
-  // for(ContactData contact:dbContacts) {
-  //   if (before.size() > 0) {
- //      GroupData group = dbGroups.iterator().next();
- //      app.goTo().HomePage();
- //      app.contact().delfromGroup(selectContact, group);
-   //    Groups after = app.db().contactfromDB(selectContact).getGroups();
- //      Assert.assertEquals(after, before.withOut(group));
-   //  } else {
-//       selectContact = dbContacts.iterator().next();
-     }
-   }
-
-  // System.out.println("Контакты  "+group.getContacts());
-
-   //ContactData selectContact = dbContacts.iterator().next();
-
-
-
-   // GroupData group= dbGroups.iterator().next().withId(310);
-   // Contacts contacts =group.getContacts();
-   // int df= contacts.size();
-
-    //while(group.getContacts().size()== 0)
-    //{
-     // int i = dbGroups.iterator().next().getId();
-      //group= dbGroups.iterator().next().withId(i=i+1);
-      //group= dbGroups.iterator().next();
-    //}
-    //ContactData selectContact = group.getContacts().iterator().next();
-      //ContactData selectContact = dbContacts.iterator().next();
-      //Groups before = selectContact.getGroups();
-    //  app.goTo().HomePage();
-    //  app.contact().delfromGroup(selectContact, group);
-   //   Groups after = app.db().contactfromDB(selectContact).getGroups();
-    //  Assert.assertEquals(after, before.withOut(group));
-//  }
-
-
-//}
