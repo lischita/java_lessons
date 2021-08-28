@@ -62,6 +62,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="ru.lischita.les.mantis.tests" />
       <recent name="ru.lischita.les.addressbook.appmanager" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -179,10 +180,10 @@
     </configuration>
     <list>
       <item itemvalue="Application.ContactDataGenerator" />
+      <item itemvalue="Gradle.LoginTests" />
       <item itemvalue="TestNG.DBAddContactInGroupTest" />
       <item itemvalue="TestNG.DBDeleteContactFromGroupTest" />
       <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.DBAddContactInGroupTest and 1 more" />
-      <item itemvalue="Gradle.LoginTests" />
       <item itemvalue="TestNG.LoginTests" />
     </list>
     <recent_temporary>
@@ -207,15 +208,6 @@
     <servers />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../mantis-tests/src/test/java/ru/lischita/les/mantis/appmanager/HttpSession.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="TestNG">
         <watch expression="post" />
