@@ -1,19 +1,30 @@
 package ru.lischita.les.mantis.tests;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
 import ru.lischita.les.mantis.appmanager.ApplicationManager;
+import ru.lischita.les.mantis.appmanager.HelperBase;
 
-public class RegistrationHelper {
-  private final ApplicationManager app;
-  private WebDriver wd;
+public class RegistrationHelper extends HelperBase {
+
 
 
   public RegistrationHelper(ApplicationManager app) {
-    this.app=app;
-    wd=app.getDriver();
-  }
+    super(app);
+ }
 
   public void start(String username, String email) {
    wd.get(app.getPropetry("web.baseURL")+"/signup_page.php");
-  }
+    type(By.name("username"),username);
+    type(By.name("email"),email);
+   //click(By.cssSelector("inpit[value='Зарегистрироваться']"));  // регистрация
+   click(By.cssSelector("input[class='width-40 pull-right btn btn-success btn-inverse bigger-110']"));
+ }
+
+  public void finish(String confirmationLink, String password) {
+   wd.get(confirmationLink);
+   type(By.name("password"),password);
+   type(By.name("password_confirm"),password);
+   //click(By.cssSelector("a[class='width-40 btn btn-inverse bigger-110 btn-success']")); // Подтверждение
+   click(By.cssSelector("button[class='width-100 width-40 pull-right btn btn-success btn-inverse bigger-110']")); //Изменение пароля без ввода
+ }
 }

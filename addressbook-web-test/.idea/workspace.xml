@@ -62,6 +62,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="ru.lischita.les.mantis.appmanager" />
       <recent name="ru.lischita.les.mantis.tests" />
       <recent name="ru.lischita.les.addressbook.appmanager" />
     </key>
@@ -73,12 +74,13 @@
       <recent name="ru.lischita.les.addressbook.model" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.lischita.les.mantis.appmanager" />
       <recent name="ru.lischita.les.mantis.appmeneger" />
       <recent name="ru.lischita.les.mantis.tests" />
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.LoginTests">
+  <component name="RunManager" selected="TestNG.RegistrationTests">
     <configuration name="ContactDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.generator.ContactDataGenerator" />
       <module name="addressbook-web-test.test" />
@@ -165,15 +167,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ru.lischita.les.addressbook.tests.DBAddContactInGroupTest and 1 more" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="addressbook-web-test.test" />
-      <option name="TEST_OBJECT" value="PATTERN" />
+    <configuration name="RegistrationTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="mantis-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.lischita.les.mantis.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.lischita.les.mantis.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.mantis.tests.RegistrationTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
-      <patterns>
-        <pattern testClass="ru.lischita.les.addressbook.tests.DBAddContactInGroupTest" />
-        <pattern testClass="ru.lischita.les.addressbook.tests.DBDeleteContactFromGroupTest" />
-      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -183,16 +189,16 @@
       <item itemvalue="Gradle.LoginTests" />
       <item itemvalue="TestNG.DBAddContactInGroupTest" />
       <item itemvalue="TestNG.DBDeleteContactFromGroupTest" />
-      <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.DBAddContactInGroupTest and 1 more" />
       <item itemvalue="TestNG.LoginTests" />
+      <item itemvalue="TestNG.RegistrationTests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.RegistrationTests" />
         <item itemvalue="TestNG.LoginTests" />
         <item itemvalue="Gradle.LoginTests" />
         <item itemvalue="TestNG.DBDeleteContactFromGroupTest" />
         <item itemvalue="TestNG.DBAddContactInGroupTest" />
-        <item itemvalue="TestNG.ru.lischita.les.addressbook.tests.DBAddContactInGroupTest and 1 more" />
       </list>
     </recent_temporary>
   </component>
@@ -207,7 +213,19 @@
     </task>
     <servers />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.php" />
+  </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../mantis-tests/src/test/java/ru/lischita/les/mantis/appmanager/HttpSession.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="TestNG">
         <watch expression="post" />

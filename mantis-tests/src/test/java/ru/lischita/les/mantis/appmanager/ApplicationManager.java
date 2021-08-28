@@ -19,6 +19,8 @@ public class ApplicationManager {
    private String browser;
   public Properties properties;
   private RegistrationHelper registrationHelper;
+  private FtpHelper ftp;
+  private MailHelper mailHelper;
 
 
   public ApplicationManager(String browser) {
@@ -73,6 +75,16 @@ public String getPropetry(String key)
   public RegistrationHelper registration() {
     if (registrationHelper==null){ registrationHelper= new RegistrationHelper(this);}
     return registrationHelper;
+  }
+
+  public FtpHelper ftp(){
+    if (ftp==null){ ftp = new FtpHelper(this);}
+    return ftp;
+  }
+
+  public MailHelper mail(){
+    if (mailHelper==null){ mailHelper = new MailHelper(this);}
+    return mailHelper;
   }
 
   public WebDriver getDriver() {
