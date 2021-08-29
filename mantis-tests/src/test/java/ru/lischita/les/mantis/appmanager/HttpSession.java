@@ -40,7 +40,7 @@ public class HttpSession {
 
   }
 
-  private String getTextFrom(CloseableHttpResponse response) throws IOException{
+  public String getTextFrom(CloseableHttpResponse response) throws IOException{
     try{
       return EntityUtils.toString(response.getEntity());
 

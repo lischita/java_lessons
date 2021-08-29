@@ -25,27 +25,28 @@ public class JamesHelper {
     this.app=app;
     telnet=new TelnetClient();
     mailSession=Session.getDefaultInstance(System.getProperties());
+    //mailSession=Session.getDefaultInstance(app.properties);
  }
 
- public boolean doesUserExist (String name){
+ public boolean doesUserExist(String name){
     initTelnetSession();
-    write("verify"+name);
+    write("verify "+name);
     String result=readUntil("exist");
     closeTelnetSession();
-    return result.trim().equals("User"+name+"exist");
+    return result.trim().equals("User "+name+" exist");
  }
 
  public void createUser(String name, String passwd){
    initTelnetSession();
-   write("adduser"+name+" "+passwd);
-   String result=readUntil("User"+name+" added");
+   write("adduser "+name+" "+passwd);
+   String result=readUntil("User "+name+" added");
    closeTelnetSession();
  }
 
   public void deleteUser(String name){
     initTelnetSession();
-    write("deluser"+name);
-    String result=readUntil("User"+name+" deleted");
+    write("deluser "+name);
+    String result=readUntil("User "+name+" deleted");
     closeTelnetSession();
   }
 
@@ -54,7 +55,9 @@ public class JamesHelper {
     int port=Integer.parseInt(app.getPropetry("mailserver.port"));
     String login= app.getPropetry("mailserver.adminlogin");
     String password= app.getPropetry("mailserver.adminpassword");
+
     try{
+      telnet.connect(mailserver, port);
       in= telnet.getInputStream();
       out=new PrintStream(telnet.getOutputStream());
     }catch(Exception e){
@@ -89,7 +92,6 @@ public class JamesHelper {
         }
       ch=(char) in.read();
       }
-
     }catch (Exception e){
       e.printStackTrace();
     }
@@ -106,7 +108,7 @@ return null;
     }
   }
 
-  private void closeTelnetSession () {write("quit");}
+  private void closeTelnetSession () {write(" quit");}
 
   public void drainEmail(String username, String password) throws MessagingException{
     Folder inbox=openInbox(username,password);

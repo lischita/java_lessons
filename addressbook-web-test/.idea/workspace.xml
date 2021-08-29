@@ -80,7 +80,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.RegistrationTests">
+  <component name="RunManager" selected="TestNG.ChangePasswordTest">
     <configuration name="ContactDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.generator.ContactDataGenerator" />
       <module name="addressbook-web-test.test" />
@@ -116,16 +116,16 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="DBAddContactInGroupTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="addressbook-web-test.test" />
+    <configuration name="ChangePasswordTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="mantis-tests.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.lischita.les.addressbook.tests.*" />
+          <option name="PATTERN" value="ru.lischita.les.mantis.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBAddContactInGroupTest" />
+      <option name="PACKAGE_NAME" value="ru.lischita.les.mantis.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.mantis.tests.ChangePasswordTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -187,18 +187,18 @@
     <list>
       <item itemvalue="Application.ContactDataGenerator" />
       <item itemvalue="Gradle.LoginTests" />
-      <item itemvalue="TestNG.DBAddContactInGroupTest" />
       <item itemvalue="TestNG.DBDeleteContactFromGroupTest" />
       <item itemvalue="TestNG.LoginTests" />
       <item itemvalue="TestNG.RegistrationTests" />
+      <item itemvalue="TestNG.ChangePasswordTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ChangePasswordTest" />
         <item itemvalue="TestNG.RegistrationTests" />
         <item itemvalue="TestNG.LoginTests" />
         <item itemvalue="Gradle.LoginTests" />
         <item itemvalue="TestNG.DBDeleteContactFromGroupTest" />
-        <item itemvalue="TestNG.DBAddContactInGroupTest" />
       </list>
     </recent_temporary>
   </component>

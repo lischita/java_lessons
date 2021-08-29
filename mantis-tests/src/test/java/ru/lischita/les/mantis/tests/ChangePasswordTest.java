@@ -12,40 +12,36 @@ import java.util.List;
 
 import static org.testng.Assert.assertTrue;
 
-public class RegistrationTests extends TestBase {
+public class ChangePasswordTest extends TestBase {
 
- @BeforeMethod  // включаем если встроеный если внешний выключаем
-public void startMailServer(){
+  @BeforeMethod  // включаем если встроеный если внешний выключаем
+  public void startMailServer(){
     app.mail().start();
   }
 
-
   @Test
-  public void testRegistration() throws MessagingException, IOException {
-    long now=System.currentTimeMillis();
-    String user="user"+now;
-    String password = "password";
-    String email="user"+now+"@localhost.localdomain";
-   // app.james().createUser(user,password); // формирование пользователя на внешнем почтовом червере
-    app.registration().start(user,email);
-    List<MailMessage> mailMessages = app.mail().waitForMail(2, 10000);  // встроеный почтовый сервер
-   //List<MailMessage> mailMessages = app.james().waitForMail(user,password,60000); // внешний почтовый сервер
-    String confirmationLink = findConfirmationLink(mailMessages, email);
+  public void testChangePassword() throws MessagingException, IOException {
+
+    String user="user1630147946843";
+    String password="pass";
+    app.registration().change(user);
+    List<MailMessage> mailMessages = app.mail().waitForMail(1, 10000);  // встроеный почтовый сервер
+    //List<MailMessage> mailMessages = app.james().waitForMail(user,password,60000); // внешний почтовый сервер
+    String confirmationLink = findConfirmationLink(mailMessages, user+"@localhost.localdomain");
     app.registration().finish(confirmationLink, password);
     assertTrue(app.newSession().login(user, password));
 
   }
-
   private String findConfirmationLink(List<MailMessage> mailMessages, String email) {
     MailMessage mailMessage = mailMessages.stream().filter((m) -> m.to.equals(email)).findFirst().get();
     VerbalExpression regex=VerbalExpression.regex().find("http://").nonSpace().oneOrMore().build();
     return  regex.getText(mailMessage.text);
-
   }
 
   @AfterMethod(alwaysRun = true) // включаем если встроеный если внешний выключаем
-public void stopMailServer(){
-  app.mail().stop();
+  public void stopMailServer(){
+    app.mail().stop();
+  }
 }
 
-}
+
