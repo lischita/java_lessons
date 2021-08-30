@@ -27,7 +27,7 @@ public class ChangePasswordTest extends TestBase {
     app.registration().change(user);
     List<MailMessage> mailMessages = app.mail().waitForMail(1, 10000);  // встроеный почтовый сервер
     //List<MailMessage> mailMessages = app.james().waitForMail(user,password,60000); // внешний почтовый сервер
-    String confirmationLink = findConfirmationLink(mailMessages, user+"@localhost.localdomain");
+    String confirmationLink = findConfirmationLink(mailMessages, user+"@localhost");
     app.registration().finish(confirmationLink, password);
     assertTrue(app.newSession().login(user, password));
 

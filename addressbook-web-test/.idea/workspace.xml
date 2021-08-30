@@ -80,7 +80,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.DBDeleteContactFromGroupTest">
+  <component name="RunManager" selected="TestNG.ChangePasswordTest">
     <configuration name="ContactDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.generator.ContactDataGenerator" />
       <module name="addressbook-web-test.test" />
@@ -194,8 +194,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.DBDeleteContactFromGroupTest" />
         <item itemvalue="TestNG.ChangePasswordTest" />
+        <item itemvalue="TestNG.DBDeleteContactFromGroupTest" />
         <item itemvalue="TestNG.RegistrationTests" />
         <item itemvalue="TestNG.LoginTests" />
         <item itemvalue="Gradle.LoginTests" />
