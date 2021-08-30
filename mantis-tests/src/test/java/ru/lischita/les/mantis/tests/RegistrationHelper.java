@@ -35,7 +35,7 @@ public class RegistrationHelper extends HelperBase {
   type(By.name("password"),"root");
   click(By.cssSelector("input[class='width-40 pull-right btn btn-success btn-inverse bigger-110']"));
   //click(By.cssSelector("li[a[href='/mantisbt-2.25.2/manage_user_page.php']]"));
-  click(By.xpath("//div[@id='sidebar']/ul/li[6]/a/i"));
+   click(By.xpath("//div[@id='sidebar']/ul/li[6]/a/i"));
   //click(By.xpath("//a[contains(@href,'/mantisbt-2.25.2/manage_user_page.php'"));
    click(By.xpath("//div[2]/div[2]/div/ul/li[2]/a")); // вот тут выбираем user1630147946843
   //click(By.xpath(String.format("//a[contains(text(),'%s'",user)));
