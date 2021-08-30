@@ -35,28 +35,30 @@ public class DBDeleteContactFromGroupTest extends TestBase {
               .withBday("11").withBmonth("May").withByear("1980")
               .withHomeaddress("г. Москва, ул. Тестиррования  дом 13")
               .withWorkphone("495-123-45-67").withPhoto(new File("src/test/resources/photo_0.jpg")).inGroup(group));
+
     }
   }
 
   @Test
   public void testDeleteContactFromGroup() throws Exception {
     Groups dbGroups = app.db().groups();
-    Contacts dbContacts = app.db().contacts();
+    Contacts before=null;
     Iterator<GroupData> iter = dbGroups.iterator();
     GroupData group = iter.next();
     boolean it = iter.hasNext();
+    if (dbGroups.size()==1) {it=true;}
     try {
       while (it) {
-        Contacts before = group.getContacts(); // список всех контактов в группе до удаления
+        before = group.getContacts(); // список всех контактов в группе до удаления
         if (before.isEmpty()) {
           group = iter.next();
         } else {
           before = group.getContacts();
-          ContactData deleteContact = dbContacts.iterator().next().withId(before.stream().mapToInt((c) -> c.getId()).max().getAsInt()); // из всех контактов принадлежащих группе выбираю с максимальным id
-          app.goTo().HomePage();
-          app.contact().delfromGroup(deleteContact, group);
-          Contacts after = app.db().groupfromDB(group).getContacts();
-          Assert.assertEquals(after, before.withOut(deleteContact));
+         ContactData deleteContact = before.iterator().next();
+         app.goTo().HomePage();
+         app.contact().delfromGroup(deleteContact, group);
+         Contacts after = app.db().groupfromDB(group).getContacts();
+         Assert.assertEquals(after, before.withOut(deleteContact));
           it = false;
         }
       }
@@ -64,6 +66,7 @@ public class DBDeleteContactFromGroupTest extends TestBase {
       AddContactInGroup();
       testDeleteContactFromGroup();
     }
+     Assert.assertNotEquals((before),null);
   }
 
   public void AddContactInGroup() throws Exception {
