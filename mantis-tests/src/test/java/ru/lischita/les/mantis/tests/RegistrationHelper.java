@@ -35,11 +35,18 @@ public class RegistrationHelper extends HelperBase {
   type(By.name("password"),"root");
   click(By.cssSelector("input[class='width-40 pull-right btn btn-success btn-inverse bigger-110']"));
   //click(By.cssSelector("li[a[href='/mantisbt-2.25.2/manage_user_page.php']]"));
-   click(By.xpath("//div[@id='sidebar']/ul/li[6]/a/i"));
-  //click(By.xpath("//a[contains(@href,'/mantisbt-2.25.2/manage_user_page.php'"));
-   click(By.xpath("//div[2]/div[2]/div/ul/li[2]/a")); // вот тут выбираем user1630147946843
-  //click(By.xpath(String.format("//a[contains(text(),'%s'",user)));
-  click(By.xpath("//div[@id='main-container']/div[2]/div[2]/div/div/div[4]/div[2]/div[2]/div/table/tbody/tr[11]/td/a"));
+  //click(By.cssSelector("ul/li[6]/a/i"));
+  click(By.xpath("//div[@id='sidebar']/ul/li[6]/a/i"));
+  //click(By.cssSelector("i[class='fa fa-gears menu-icon']"));
+  //click(By.cssSelector("i.fa.fa-gears.menu-icon"));
+   //click(By.xpath("//a[contains(@href,'/mantisbt-2.25.2/manage_user_page.php']"));
+  //click(By.cssSelector("a[href='/mantisbt-2.25.2/manage_user_page.php']"));
+  //click(By.className("fa fa-gears menu-icon"));
+  //click(By.xpath("//li[6]/a/i"));
+  click(By.xpath("//div[2]/div[2]/div/ul/li[2]/a"));
+  click(By.linkText("user1630327388961"));
+ // click(By.xpath(String.format("//a[contains(text(),'%s']",user)));
+  //click(By.xpath("//div[@id='main-container']/div[2]/div[2]/div/div/div[4]/div[2]/div[2]/div/table/tbody/tr[11]/td/a"));
   click(By.cssSelector("input[class='btn btn-primary btn-white btn-round']"));
   }
 

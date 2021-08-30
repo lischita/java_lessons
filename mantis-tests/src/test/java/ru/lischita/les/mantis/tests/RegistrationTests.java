@@ -1,7 +1,5 @@
 package ru.lischita.les.mantis.tests;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.lanwen.verbalregex.VerbalExpression;
 import ru.lischita.les.mantis.model.MailMessage;
@@ -14,7 +12,7 @@ import static org.testng.Assert.assertTrue;
 
 public class RegistrationTests extends TestBase {
 
- @BeforeMethod  // включаем если встроеный если внешний выключаем
+ //@BeforeMethod  // включаем если встроеный если внешний выключаем
 public void startMailServer(){
     app.mail().start();
   }
@@ -25,11 +23,11 @@ public void startMailServer(){
     long now=System.currentTimeMillis();
     String user="user"+now;
     String password = "password";
-    String email="user"+now+"@localhost.localdomain";
-   // app.james().createUser(user,password); // формирование пользователя на внешнем почтовом червере
+    String email="user"+now+"@localhost"; //.localdomain";
+    app.james().createUser(user,password); // формирование пользователя на внешнем почтовом червере
     app.registration().start(user,email);
-    List<MailMessage> mailMessages = app.mail().waitForMail(2, 10000);  // встроеный почтовый сервер
-   //List<MailMessage> mailMessages = app.james().waitForMail(user,password,60000); // внешний почтовый сервер
+   // List<MailMessage> mailMessages = app.mail().waitForMail(2, 10000);  // встроеный почтовый сервер
+   List<MailMessage> mailMessages = app.james().waitForMail(user,password,60000); // внешний почтовый сервер
     String confirmationLink = findConfirmationLink(mailMessages, email);
     app.registration().finish(confirmationLink, password);
     assertTrue(app.newSession().login(user, password));
@@ -43,7 +41,7 @@ public void startMailServer(){
 
   }
 
-  @AfterMethod(alwaysRun = true) // включаем если встроеный если внешний выключаем
+ // @AfterMethod(alwaysRun = true) // включаем если встроеный если внешний выключаем
 public void stopMailServer(){
   app.mail().stop();
 }

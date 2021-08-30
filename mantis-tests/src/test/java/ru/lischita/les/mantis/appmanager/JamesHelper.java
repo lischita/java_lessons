@@ -24,8 +24,8 @@ public class JamesHelper {
   public JamesHelper (ApplicationManager app){
     this.app=app;
     telnet=new TelnetClient();
-    mailSession=Session.getDefaultInstance(System.getProperties());
-    //mailSession=Session.getDefaultInstance(app.properties);
+    //mailSession=Session.getDefaultInstance(System.getProperties());
+    mailSession=Session.getDefaultInstance(app.properties);
  }
 
  public boolean doesUserExist(String name){
@@ -81,7 +81,7 @@ public class JamesHelper {
     try{
       char lastChar=pattern.charAt(pattern.length()-1);
       StringBuffer sb=new StringBuffer();
-      char ch=(char) in.read();
+      char ch=(char)in.read();
       while(true){
         System.out.print(ch);
         sb.append(ch);
@@ -90,7 +90,7 @@ public class JamesHelper {
             return sb.toString();
           }
         }
-      ch=(char) in.read();
+      ch=(char)in.read();
       }
     }catch (Exception e){
       e.printStackTrace();
