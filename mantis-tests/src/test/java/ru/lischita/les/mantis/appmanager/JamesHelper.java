@@ -24,8 +24,8 @@ public class JamesHelper {
   public JamesHelper (ApplicationManager app){
     this.app=app;
     telnet=new TelnetClient();
-    //mailSession=Session.getDefaultInstance(System.getProperties());
-    mailSession=Session.getDefaultInstance(app.properties);
+     mailSession=Session.getDefaultInstance(System.getProperties());
+    //mailSession=Session.getDefaultInstance(app.properties);
  }
 
  public boolean doesUserExist(String name){

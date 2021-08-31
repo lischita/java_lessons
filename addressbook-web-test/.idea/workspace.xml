@@ -74,6 +74,7 @@
       <recent name="ru.lischita.les.addressbook.model" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.lischita.les.mantis.model" />
       <recent name="ru.lischita.les.mantis.appmanager" />
       <recent name="ru.lischita.les.mantis.appmeneger" />
       <recent name="ru.lischita.les.mantis.tests" />
@@ -95,27 +96,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/../mantis-tests" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.lischita.les.mantis.tests.LoginTests&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="ChangePasswordTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="mantis-tests.test" />
       <extension name="coverage">
@@ -126,6 +106,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.mantis.tests" />
       <option name="MAIN_CLASS_NAME" value="ru.lischita.les.mantis.tests.ChangePasswordTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DBAddContactInGroupTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-test.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.lischita.les.addressbook.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBAddContactInGroupTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -186,19 +183,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.ContactDataGenerator" />
-      <item itemvalue="Gradle.LoginTests" />
       <item itemvalue="TestNG.DBDeleteContactFromGroupTest" />
       <item itemvalue="TestNG.LoginTests" />
       <item itemvalue="TestNG.RegistrationTests" />
       <item itemvalue="TestNG.ChangePasswordTest" />
+      <item itemvalue="TestNG.DBAddContactInGroupTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.ChangePasswordTest" />
+        <item itemvalue="TestNG.DBAddContactInGroupTest" />
         <item itemvalue="TestNG.RegistrationTests" />
         <item itemvalue="TestNG.DBDeleteContactFromGroupTest" />
         <item itemvalue="TestNG.LoginTests" />
-        <item itemvalue="Gradle.LoginTests" />
       </list>
     </recent_temporary>
   </component>
@@ -223,6 +220,16 @@
           <url>file://$PROJECT_DIR$/../mantis-tests/src/test/java/ru/lischita/les/mantis/appmanager/HttpSession.java</url>
           <line>18</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../mantis-tests/src/test/java/ru/lischita/les/mantis/appmanager/JamesHelper.java</url>
+          <line>127</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ru/lischita/les/addressbook/appmanager/DBHelper.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

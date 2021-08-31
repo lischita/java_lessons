@@ -22,18 +22,21 @@ public class ApplicationManager {
   private FtpHelper ftp;
   private MailHelper mailHelper;
   private JamesHelper jamesHelper;
+  private DBHelper dbHelper;
 
 
   public ApplicationManager(String browser) {
     this.browser = browser;
-    properties = new Properties();
+    dbHelper = new DBHelper();
+     properties = new Properties();
+
   }
 
   public void init() throws IOException {
     String target=System.getProperty("target","local");  //local имя файла  .properties по умолчанию передаваемое в командной строке если будет отсуствовать атрибут target gradlew -Pbrowser=firefox,target=local testContacts
     properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties",target))));
 
-   /* if(browser.equals(BrowserType.CHROME)) {
+      /* if(browser.equals(BrowserType.CHROME)) {
       System.setProperty("webdriver.chrome.driver", properties.getProperty("webdriver.chrome"));//System.setProperty("webdriver.chrome.driver", "C:\\Users\\Елизавета Криворучка\\Desktop\\world\\chromedriver.exe");
       wd = new ChromeDriver();
     }
@@ -93,6 +96,8 @@ public String getPropetry(String key)
     return jamesHelper;
   }
 
+public DBHelper db(){return dbHelper;}
+
   public WebDriver getDriver() {
     if(wd==null){
       if(browser.equals(BrowserType.CHROME)) {
@@ -107,10 +112,12 @@ public String getPropetry(String key)
         System.setProperty("webdriver.gecko.driver", properties.getProperty("webdriver.firefox"));//System.setProperty("webdriver.gecko.driver", "C:\\Users\\Елизавета Криворучка\\Desktop\\world\\geckodriver.exe");
         wd = new FirefoxDriver();
       }
-
-      wd.get(properties.getProperty("web.baseURL")); //wd.get("http://localhost/addressbook/");
-
+      wd.get(properties.getProperty("web.baseURL")); // указано в local.properties
     }
     return wd;
   }
+
+
+
+
 }
