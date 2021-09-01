@@ -21,21 +21,18 @@ public class ChangePasswordTest extends TestBase {
     app.mail().start();
   }
 
+
   @Test
 
   public void testChangePassword() throws MessagingException, IOException {
     Users dbUsers = app.db().users();
     UsersData selectuser=dbUsers.iterator().next();
-    String user=selectuser.getUsername();
-    String email=selectuser.getEmail();
-    String password=selectuser.getPassword();
-
-   // String user="user1630423412744";
-    //String password="password";
-
+    String user = selectuser.getUsername();
+    String email = selectuser.getEmail();
+    String password = selectuser.getPassword();
     app.registration().change(user);
-    List<MailMessage> mailMessages = app.mail().waitForMail(1, 60000);  // встроеный почтовый сервер
-    //List<MailMessage> mailMessages = app.james().waitForMail(user,password,60000); // внешний почтовый сервер
+   List<MailMessage> mailMessages = app.mail().waitForMail(1, 60000);  // встроеный почтовый сервер
+   // List<MailMessage> mailMessages = app.james().waitForMail(user,password,70000); // внешний почтовый сервер
     String confirmationLink = findConfirmationLink(mailMessages, email);
     app.registration().finish(confirmationLink, password);
     assertTrue(app.newSession().login(user, password));
@@ -49,7 +46,7 @@ public class ChangePasswordTest extends TestBase {
   }
 
  @AfterMethod(alwaysRun = true) // включаем если встроеный если внешний выключаем
-  public void stopMailServer(){
+   public void stopMailServer(){
     app.mail().stop();
   }
 }

@@ -19,7 +19,7 @@ public void startMailServer(){
 
 
   @Test
-  public void testRegistration() throws MessagingException, IOException {
+  public  void testRegistration() throws MessagingException, IOException {
     long now=System.currentTimeMillis();
     String user="user"+now;
     String password = "password";

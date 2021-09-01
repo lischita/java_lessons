@@ -13,14 +13,15 @@ import java.util.List;
 public class DBHelper {
 
   private final SessionFactory sessionFactory;
+  private final ApplicationManager app;
 
-   public DBHelper ()  // создаем соединение с БД
-  {
+
+  public DBHelper(ApplicationManager app) {
+    this.app=app;
     final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
             .configure() // configures settings from hibernate.cfg.xml
             .build();
     sessionFactory = new MetadataSources( registry ).buildMetadata().buildSessionFactory();
-
   }
 
   public Users users(){

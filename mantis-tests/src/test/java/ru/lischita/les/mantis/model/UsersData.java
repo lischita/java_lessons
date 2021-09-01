@@ -10,7 +10,7 @@ import java.util.Objects;
 @Table  (name="mantis_user_table") // Если бы таблица именовалась также как класс, то все бы присоединилось автомоматом, а так тут указываем имя таблицы огда используем HBConnectionTest
 public class UsersData {
   @Id// используем эту аннтацию так как атрибут id использует как идентификатор когда используем HBConnectionTest
-  private  int id;
+  private  int id=Integer.MAX_VALUE;
   private  String username;
   private  String email;
   private  String password;
@@ -23,6 +23,7 @@ public class UsersData {
   public String getPassword() {
     return password;
   }
+
   public UsersData withId(int id) {
         this.id = id;
         return this;
@@ -37,7 +38,7 @@ public class UsersData {
     return this;
   }
 
-  public UsersData withFooter(String password) {
+  public UsersData withPassword(String password) {
     this.password = password;
     return this;
   }

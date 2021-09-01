@@ -27,8 +27,7 @@ public class ApplicationManager {
 
   public ApplicationManager(String browser) {
     this.browser = browser;
-    dbHelper = new DBHelper();
-     properties = new Properties();
+    properties = new Properties();
 
   }
 
@@ -95,8 +94,11 @@ public String getPropetry(String key)
     if (jamesHelper==null){ jamesHelper = new JamesHelper(this);}
     return jamesHelper;
   }
+  public DBHelper db(){
+    if (dbHelper==null){ dbHelper = new DBHelper(this);}
+    return dbHelper;
+  }
 
-public DBHelper db(){return dbHelper;}
 
   public WebDriver getDriver() {
     if(wd==null){
