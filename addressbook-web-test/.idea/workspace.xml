@@ -20,6 +20,9 @@
     <projectState path="$PROJECT_DIR$/../mantis-tests">
       <ProjectState />
     </projectState>
+    <projectState path="$PROJECT_DIR$/../soap-sample">
+      <ProjectState />
+    </projectState>
   </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
@@ -54,8 +57,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mantis-tests/src/test/resources" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.31282723" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
@@ -81,7 +84,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ChangePasswordTest">
+  <component name="RunManager" selected="TestNG.SoapTests">
     <configuration name="ContactDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.generator.ContactDataGenerator" />
       <module name="addressbook-web-test.test" />
@@ -106,23 +109,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.mantis.tests" />
       <option name="MAIN_CLASS_NAME" value="ru.lischita.les.mantis.tests.ChangePasswordTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DBAddContactInGroupTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="addressbook-web-test.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.lischita.les.addressbook.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBAddContactInGroupTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -164,7 +150,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegistrationTests" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="mantis-tests.test" />
       <extension name="coverage">
         <pattern>
@@ -173,7 +159,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.mantis.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.mantis.tests.RegistrationTests" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.mantis.tests.LoginTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SoapTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="mantis-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.lischita.les.mantis.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.lischita.les.mantis.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.mantis.tests.SoapTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -183,19 +186,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.ContactDataGenerator" />
-      <item itemvalue="TestNG.RegistrationTests" />
       <item itemvalue="TestNG.ChangePasswordTest" />
-      <item itemvalue="TestNG.DBAddContactInGroupTest" />
       <item itemvalue="TestNG.DBHBConnectionTest" />
       <item itemvalue="TestNG.DBHBConnectionTest (1)" />
+      <item itemvalue="TestNG.SoapTests" />
+      <item itemvalue="TestNG.LoginTests" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.ChangePasswordTest" />
+        <item itemvalue="TestNG.SoapTests" />
         <item itemvalue="TestNG.DBHBConnectionTest (1)" />
+        <item itemvalue="TestNG.LoginTests" />
+        <item itemvalue="TestNG.ChangePasswordTest" />
         <item itemvalue="TestNG.DBHBConnectionTest" />
-        <item itemvalue="TestNG.DBAddContactInGroupTest" />
-        <item itemvalue="TestNG.RegistrationTests" />
       </list>
     </recent_temporary>
   </component>

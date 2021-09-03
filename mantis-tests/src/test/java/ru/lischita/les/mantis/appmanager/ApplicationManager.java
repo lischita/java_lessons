@@ -23,6 +23,7 @@ public class ApplicationManager {
   private MailHelper mailHelper;
   private JamesHelper jamesHelper;
   private DBHelper dbHelper;
+  private SoapHelper soapHelper;
 
 
   public ApplicationManager(String browser) {
@@ -97,6 +98,11 @@ public String getPropetry(String key)
   public DBHelper db(){
     if (dbHelper==null){ dbHelper = new DBHelper(this);}
     return dbHelper;
+  }
+
+  public SoapHelper soap(){
+    if (soapHelper==null){ soapHelper = new SoapHelper(this);}
+    return soapHelper;
   }
 
 
