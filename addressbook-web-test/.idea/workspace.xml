@@ -84,7 +84,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.SoapTests">
+  <component name="RunManager" selected="TestNG.ChangePasswordTest">
     <configuration name="ContactDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.generator.ContactDataGenerator" />
       <module name="addressbook-web-test.test" />
@@ -116,6 +116,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ChangePasswordTest.testChangePassword" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="mantis-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.lischita.les.mantis.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.lischita.les.mantis.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.mantis.tests.ChangePasswordTest" />
+      <option name="METHOD_NAME" value="testChangePassword" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DBHBConnectionTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="mantis-tests.test" />
       <extension name="coverage">
@@ -133,24 +151,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBHBConnectionTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="addressbook-web-test.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.lischita.les.addressbook.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.lischita.les.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.tests.DBHBConnectionTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginTests" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="RegistrationTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="mantis-tests.test" />
       <extension name="coverage">
         <pattern>
@@ -159,7 +160,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.mantis.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.mantis.tests.LoginTests" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.mantis.tests.RegistrationTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -187,18 +188,18 @@
     <list>
       <item itemvalue="Application.ContactDataGenerator" />
       <item itemvalue="TestNG.ChangePasswordTest" />
-      <item itemvalue="TestNG.DBHBConnectionTest" />
       <item itemvalue="TestNG.DBHBConnectionTest (1)" />
       <item itemvalue="TestNG.SoapTests" />
-      <item itemvalue="TestNG.LoginTests" />
+      <item itemvalue="TestNG.ChangePasswordTest.testChangePassword" />
+      <item itemvalue="TestNG.RegistrationTests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ChangePasswordTest" />
+        <item itemvalue="TestNG.RegistrationTests" />
+        <item itemvalue="TestNG.ChangePasswordTest.testChangePassword" />
         <item itemvalue="TestNG.SoapTests" />
         <item itemvalue="TestNG.DBHBConnectionTest (1)" />
-        <item itemvalue="TestNG.LoginTests" />
-        <item itemvalue="TestNG.ChangePasswordTest" />
-        <item itemvalue="TestNG.DBHBConnectionTest" />
       </list>
     </recent_temporary>
   </component>
@@ -234,18 +235,13 @@
           <line>21</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../mantis-tests/src/test/java/ru/lischita/les/mantis/tests/TestBase.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="TestNG">
         <watch expression="post" />
         <watch expression="password" />
-        <watch expression="confirmationLink" />
+        <watch expression="confirmationLink" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
