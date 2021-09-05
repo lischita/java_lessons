@@ -21,7 +21,7 @@ public class SoapHelper {
 
   }
 
-  private MantisConnectPortType getMantisConnect() throws ServiceException, MalformedURLException, javax.xml.rpc.ServiceException {
+  public static MantisConnectPortType getMantisConnect() throws ServiceException, MalformedURLException, javax.xml.rpc.ServiceException {
     MantisConnectPortType mc = new MantisConnectLocator().getMantisConnectPort(new URL("http://localhost/mantisbt-2.25.2/api/soap/mantisconnect.php"));
     return mc;
   }
@@ -49,6 +49,7 @@ public class SoapHelper {
             .withProject(new Project().withId(createdIssueData.getProject().getId().intValue()).withName(createdIssueData.getProject().getName()));
 
   }
+
  /* private MantisConnectPortType getMantisConnect() throws ServiceException, MalformedURLException {
     SimpleProvider clientConfig = new SimpleProvider();
     AxisLogHandler logHandler = new AxisLogHandler();
