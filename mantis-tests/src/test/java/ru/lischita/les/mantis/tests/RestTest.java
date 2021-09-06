@@ -12,7 +12,7 @@ import java.util.Set;
 public class RestTest extends TestBase {
   @Test
   public void testCreateIssue() throws IOException {
-    int issueId = 1280;
+    int issueId = 1292;
     System.out.println("Номер задачи: " + issueId);
     try {
       skipIfNotFixedRest(issueId);

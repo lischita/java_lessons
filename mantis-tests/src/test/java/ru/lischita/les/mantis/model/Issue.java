@@ -1,11 +1,14 @@
 package ru.lischita.les.mantis.model;
 
+import java.util.Objects;
+
 public class Issue {
   private int id;
   private String summary;
   private String description;
   private Project project;
-  private String subject; // использую для Rest запроса
+  private String subject;  // использую для Rest запроса
+  private String state_name; // использую для Rest запроса
 
   public int getId() {
     return id;
@@ -16,11 +19,34 @@ public class Issue {
     return this;
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Issue issue = (Issue) o;
+    return id == issue.id && Objects.equals(summary, issue.summary) && Objects.equals(description, issue.description) && Objects.equals(project, issue.project) && Objects.equals(subject, issue.subject) && Objects.equals(state_name, issue.state_name);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, summary, description, project, subject, state_name);
+  }
+
   public String getSubject() {
     return subject;
   }
+
   public Issue withSubject(String subject) {
     this.subject = subject;
+    return this;
+  }
+
+  public String getState_name() {
+    return state_name;
+  }
+
+  public Issue withState_name(String state_name) {
+    this.state_name = state_name;
     return this;
   }
 
