@@ -24,6 +24,7 @@ public class ApplicationManager {
   private JamesHelper jamesHelper;
   private DBHelper dbHelper;
   private SoapHelper soapHelper;
+  private RestHelper restHelper;
 
 
   public ApplicationManager(String browser) {
@@ -103,6 +104,11 @@ public String getPropetry(String key)
   public SoapHelper soap(){
     if (soapHelper==null){ soapHelper = new SoapHelper(this);}
     return soapHelper;
+  }
+
+  public RestHelper rest(){
+    if (restHelper==null){ restHelper = new RestHelper(this);}
+    return restHelper;
   }
 
 

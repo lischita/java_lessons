@@ -91,7 +91,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GitHubTests">
+  <component name="RunManager" selected="TestNG.RestTest">
     <configuration name="ContactDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.generator.ContactDataGenerator" />
       <module name="addressbook-web-test.test" />
@@ -131,12 +131,29 @@
       <module name="gthub-sample.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.lischita.les.github.*" />
+          <option name="PATTERN" value="ru.lischita.les.rest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.github" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.github.GitHubTests" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.rest.GitHubTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="mantis-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.lischita.les.mantis.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.lischita.les.mantis.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.mantis.tests.RestTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -148,12 +165,12 @@
       <module name="rest-sample.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.lischita.les.github.*" />
+          <option name="PATTERN" value="ru.lischita.les.rest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.lischita.les.rest" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.github.RestTests" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.rest.RestTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -178,39 +195,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SoapTests.testCreateIssue" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="mantis-tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.lischita.les.mantis.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.lischita.les.mantis.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.mantis.tests.SoapTests" />
-      <option name="METHOD_NAME" value="testCreateIssue" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.ContactDataGenerator" />
       <item itemvalue="TestNG.SoapTests" />
-      <item itemvalue="TestNG.SoapTests.testCreateIssue" />
       <item itemvalue="Gradle.RestTests" />
       <item itemvalue="TestNG.RestTests" />
       <item itemvalue="TestNG.GitHubTests" />
+      <item itemvalue="TestNG.RestTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.GitHubTests" />
+        <item itemvalue="TestNG.RestTest" />
         <item itemvalue="TestNG.RestTests" />
+        <item itemvalue="TestNG.GitHubTests" />
         <item itemvalue="Gradle.RestTests" />
         <item itemvalue="TestNG.SoapTests" />
-        <item itemvalue="TestNG.SoapTests.testCreateIssue" />
       </list>
     </recent_temporary>
   </component>
@@ -246,6 +245,11 @@
           <line>21</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../rest-sample/src/test/java/ru/lischita/les/rest/RestTests.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -253,6 +257,8 @@
         <watch expression="post" />
         <watch expression="password" />
         <watch expression="confirmationLink" language="JAVA" />
+        <watch expression="json" />
+        <watch expression="json" />
       </configuration>
     </watches-manager>
   </component>

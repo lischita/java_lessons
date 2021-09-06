@@ -1,17 +1,26 @@
 package ru.lischita.les.mantis.model;
 
 public class Issue {
-  private int Id;
+  private int id;
   private String summary;
   private String description;
   private Project project;
+  private String subject; // использую для Rest запроса
 
   public int getId() {
-    return Id;
+    return id;
   }
 
   public Issue withId(int id) {
-    Id = id;
+    this.id = id;
+    return this;
+  }
+
+  public String getSubject() {
+    return subject;
+  }
+  public Issue withSubject(String subject) {
+    this.subject = subject;
     return this;
   }
 

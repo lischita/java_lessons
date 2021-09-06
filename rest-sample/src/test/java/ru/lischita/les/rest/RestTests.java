@@ -1,4 +1,4 @@
-package ru.lischita.les.github;
+package ru.lischita.les.rest;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
