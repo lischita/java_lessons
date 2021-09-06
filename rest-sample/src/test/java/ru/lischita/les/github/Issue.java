@@ -1,4 +1,4 @@
-package ru.lischita.les.rest;
+package ru.lischita.les.github;
 
 import java.util.Objects;
 
