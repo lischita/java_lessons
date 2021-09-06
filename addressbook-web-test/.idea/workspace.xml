@@ -20,6 +20,9 @@
     <projectState path="$PROJECT_DIR$/../mantis-tests">
       <ProjectState />
     </projectState>
+    <projectState path="$PROJECT_DIR$/../rest-sample">
+      <ProjectState />
+    </projectState>
     <projectState path="$PROJECT_DIR$/../soap-sample">
       <ProjectState />
     </projectState>
@@ -57,7 +60,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rest-sample/build.gradle" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.31282723" />
@@ -65,6 +68,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="ru.lischita.les.rest" />
       <recent name="ru.lischita.les.mantis.appmanager" />
       <recent name="ru.lischita.les.mantis.tests" />
       <recent name="ru.lischita.les.addressbook.appmanager" />
@@ -84,7 +88,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.SoapTests">
+  <component name="RunManager" selected="TestNG.RestTests">
     <configuration name="ContactDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.generator.ContactDataGenerator" />
       <module name="addressbook-web-test.test" />
@@ -99,33 +103,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChangePasswordTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="mantis-tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.lischita.les.mantis.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.lischita.les.mantis.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.mantis.tests.ChangePasswordTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="RestTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../rest-sample" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;ru.lischita.les.rest.RestTests&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
-    <configuration name="RegistrationTests" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="mantis-tests.test" />
+    <configuration name="RestTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="rest-sample.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.lischita.les.mantis.tests.*" />
+          <option name="PATTERN" value="ru.lischita.les.rest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ru.lischita.les.mantis.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.mantis.tests.RegistrationTests" />
+      <option name="PACKAGE_NAME" value="ru.lischita.les.rest" />
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.rest.RestTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -188,19 +196,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.ContactDataGenerator" />
-      <item itemvalue="TestNG.ChangePasswordTest" />
       <item itemvalue="TestNG.SoapTests" />
-      <item itemvalue="TestNG.RegistrationTests" />
       <item itemvalue="TestNG.SoapTests.testCreateIssue" />
       <item itemvalue="TestNG.SoapTests.testGetProject" />
+      <item itemvalue="Gradle.RestTests" />
+      <item itemvalue="TestNG.RestTests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.RestTests" />
+        <item itemvalue="Gradle.RestTests" />
         <item itemvalue="TestNG.SoapTests" />
         <item itemvalue="TestNG.SoapTests.testCreateIssue" />
         <item itemvalue="TestNG.SoapTests.testGetProject" />
-        <item itemvalue="TestNG.ChangePasswordTest" />
-        <item itemvalue="TestNG.RegistrationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -235,6 +243,11 @@
           <url>file://$PROJECT_DIR$/src/test/java/ru/lischita/les/addressbook/appmanager/DBHelper.java</url>
           <line>21</line>
           <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../rest-sample/src/test/java/ru/lischita/les/rest/RestTests.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
