@@ -28,6 +28,7 @@ public class RestTests {
     Set<Issue> newIssues=getIssues();
     oldIssues.add(newIssue.withtId(issueId));
     Assert.assertEquals(newIssues,oldIssues);
+    System.out.println(issueId);
 
   }
 

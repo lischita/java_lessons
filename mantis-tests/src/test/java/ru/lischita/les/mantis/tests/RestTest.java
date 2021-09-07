@@ -20,10 +20,52 @@ public class RestTest extends TestBase {
       Issue newIssue = new Issue().withSubject("Test Issue").withDescription("TEST number 9");
       issueId = app.rest().createIssue(newIssue);
       Set<Issue> newIssues = app.rest().getIssues();
+      System.out.println(issueId);
       oldIssues.add(newIssue.withId(issueId));
       Assert.assertEquals(newIssues, oldIssues);
+      System.out.println("Тест testCreateIssue() пройден");
+      System.out.println("***************************************************************************************************************");
     } catch (SkipException | ServiceException | javax.xml.rpc.ServiceException e) {
-      System.out.println("Тест testGetProject() пропущен так как статус задачи  " + issueId + " не переведен в 'Решена'");
+      System.out.println("Тест testCreateIssue() пропущен так как статус задачи  " + issueId + " не переведен в 'Resolved' или 'Closed' ");
+      System.out.println("***************************************************************************************************************");
+    }
+  }
+  @Test
+  public void testCreateIssue_1() throws IOException {
+    int issueId = 1347;
+    System.out.println("Номер задачи: " + issueId);
+    try {
+      skipIfNotFixedRest(issueId);
+      Set<Issue> oldIssues = app.rest().getIssues();
+      Issue newIssue = new Issue().withSubject("Test Issue").withDescription("TEST number 9");
+      issueId = app.rest().createIssue(newIssue);
+      Set<Issue> newIssues = app.rest().getIssues();
+      oldIssues.add(newIssue.withId(issueId));
+      Assert.assertEquals(newIssues, oldIssues);
+      System.out.println("Тест testCreateIssue()_1 пройден");
+      System.out.println("***************************************************************************************************************");
+    } catch (SkipException | ServiceException | javax.xml.rpc.ServiceException e) {
+      System.out.println("Тест testCreateIssue()_1 пропущен так как статус задачи  " + issueId + " не переведен в 'Resolved' или 'Closed' ");
+      System.out.println("***************************************************************************************************************");
+    }
+  }
+  @Test
+  public void testCreateIssue_2() throws IOException {
+    int issueId = 1348;
+    System.out.println("Номер задачи: " + issueId);
+    try {
+      skipIfNotFixedRest(issueId);
+      Set<Issue> oldIssues = app.rest().getIssues();
+      Issue newIssue = new Issue().withSubject("Test Issue").withDescription("TEST number 9");
+      issueId = app.rest().createIssue(newIssue);
+      Set<Issue> newIssues = app.rest().getIssues();
+      oldIssues.add(newIssue.withId(issueId));
+      Assert.assertEquals(newIssues, oldIssues);
+      System.out.println("Тест testCreateIssue()_1 пройден");
+      System.out.println("***************************************************************************************************************");
+    } catch (SkipException | ServiceException | javax.xml.rpc.ServiceException e) {
+      System.out.println("Тест testCreateIssue()_2 пропущен так как статус задачи  " + issueId + " не переведен в 'Resolved' или 'Closed' ");
+      System.out.println("***************************************************************************************************************");
     }
   }
 }

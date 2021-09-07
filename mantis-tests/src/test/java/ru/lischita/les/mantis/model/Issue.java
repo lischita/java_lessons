@@ -24,12 +24,12 @@ public class Issue {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Issue issue = (Issue) o;
-    return id == issue.id && Objects.equals(summary, issue.summary) && Objects.equals(description, issue.description) && Objects.equals(project, issue.project) && Objects.equals(subject, issue.subject) && Objects.equals(state_name, issue.state_name);
+    return id == issue.id && Objects.equals(summary, issue.summary) && Objects.equals(description, issue.description) && Objects.equals(project, issue.project) && Objects.equals(subject, issue.subject);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, summary, description, project, subject, state_name);
+    return Objects.hash(id, summary, description, project, subject);
   }
 
   public String getSubject() {

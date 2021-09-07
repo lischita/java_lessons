@@ -45,13 +45,13 @@ public class TestBase {
   boolean isIssueOpenRest(int issueId) throws IOException {
     String json= RestHelper.getExecutor().execute(Request.Get("https://bugify.stqa.ru/api/issues/"+issueId+".json")).returnContent().asString();// Если используем Rest запрос
     JsonElement parsed=new JsonParser().parse(json);
-    JsonElement  issuesJ=parsed.getAsJsonObject().get("issue");
-    Set<Issue> issues = new Gson().fromJson(issuesJ, new TypeToken<Set<Issue>>(){}.getType()); // Преобразовали список в множество модельных объектов Issue (в нем так же будет всего один элемент - наша задача)
-    Issue issue = issues.iterator().next(); // Получили из множества нашу задачу
-    String dd=issue.getState_name();
-    if (issue.getState_name().equals("Resolved")) {
-      return false;
-    } else { return true;}
+    JsonElement  issuesJ=parsed.getAsJsonObject().get("issues");
+    Set<Issue> issues = new Gson().fromJson( issuesJ, new TypeToken<Set<Issue>>(){}.getType());
+    Issue issue = issues.iterator().next();
+    System.out.println("Статус задачи: "+issue.getState_name());
+    if (issue.getState_name().equals("Resolved")|issue.getState_name().equals("Closed")) {
+    return false;
+    } else {return true;}
   }
 
 

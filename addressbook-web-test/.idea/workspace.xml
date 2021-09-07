@@ -197,8 +197,8 @@
     </configuration>
     <list>
       <item itemvalue="Application.ContactDataGenerator" />
-      <item itemvalue="TestNG.SoapTests" />
       <item itemvalue="Gradle.RestTests" />
+      <item itemvalue="TestNG.SoapTests" />
       <item itemvalue="TestNG.RestTests" />
       <item itemvalue="TestNG.GitHubTests" />
       <item itemvalue="TestNG.RestTest" />
@@ -246,9 +246,9 @@
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../mantis-tests/src/test/java/ru/lischita/les/mantis/tests/TestBase.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="55" />
+          <url>file://$PROJECT_DIR$/../rest-sample/src/test/java/ru/lischita/les/rest/RestTests.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
