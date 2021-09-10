@@ -3,3 +3,7 @@ apply plugin: 'application'
 mainClassName="ru.lischita.les.senbox.First_pro"
 repositories {mavenCentral()}
 dependencies{implementation("com.thegoate:testng:0.15.8.202107032201")}
+
+test {
+    useTestNG()
+}

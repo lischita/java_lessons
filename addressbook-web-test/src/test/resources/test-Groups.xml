@@ -4,9 +4,7 @@
 <suite name = "Suite1">
     <test name = "Groups">
         <classes>
-            <class name = "ru.lischita.les.addressbook.tests.GroupCreationTests"/>
             <class name = "ru.lischita.les.addressbook.tests.GroupModificationTests"/>
-            <class name = "ru.lischita.les.addressbook.tests.GroupDeletionTests"/>
-        </classes>
+          </classes>
     </test>
 </suite>
