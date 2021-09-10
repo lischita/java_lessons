@@ -14,6 +14,9 @@
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/../SENDBOX">
+      <ProjectState />
+    </projectState>
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
@@ -63,8 +66,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gthub-sample/build.gradle" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SENDBOX/build.gradle" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.31282723" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
@@ -91,7 +94,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.RestTest">
+  <component name="RunManager" selected="Application.First_pro">
     <configuration name="ContactDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.lischita.les.addressbook.generator.ContactDataGenerator" />
       <module name="addressbook-web-test.test" />
@@ -99,6 +102,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ru.lischita.les.addressbook.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="First_pro" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.senbox.First_pro" />
+      <module name="SENDBOX.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.lischita.les.senbox.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -178,38 +194,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SoapTests" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="mantis-tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.lischita.les.mantis.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.lischita.les.mantis.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.lischita.les.mantis.tests.SoapTests" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.ContactDataGenerator" />
+      <item itemvalue="Application.First_pro" />
       <item itemvalue="Gradle.RestTests" />
-      <item itemvalue="TestNG.SoapTests" />
       <item itemvalue="TestNG.RestTests" />
       <item itemvalue="TestNG.GitHubTests" />
       <item itemvalue="TestNG.RestTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.First_pro" />
         <item itemvalue="TestNG.RestTest" />
         <item itemvalue="TestNG.RestTests" />
         <item itemvalue="TestNG.GitHubTests" />
         <item itemvalue="Gradle.RestTests" />
-        <item itemvalue="TestNG.SoapTests" />
       </list>
     </recent_temporary>
   </component>
