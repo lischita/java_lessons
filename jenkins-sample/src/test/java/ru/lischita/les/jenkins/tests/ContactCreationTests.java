@@ -15,7 +15,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 
 public class ContactCreationTests {
-    @Test(enabled = false)
+    @Test
     public void testContactCreationTests () throws Exception
     {
         File photo = new File("src/test/resources/photo_0.jpg");
