@@ -1,9 +1,6 @@
 package ru.lischita.les.jenkins.appmanager;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Capabilities;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -55,6 +52,7 @@ public class ApplicationManager {
     }else {
       DesiredCapabilities capabilites=new DesiredCapabilities();
       capabilites.setBrowserName(browser);
+      capabilites.setPlatform(Platform.fromString(System.getProperty("platform","win7")));
       wd=new RemoteWebDriver(new URL(properties.getProperty("selenium.server")),capabilites);
 
     }
