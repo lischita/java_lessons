@@ -7,10 +7,10 @@
         <option name="delegatedBuild" value="false" />
         <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/addressbook-web-test" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/jenkins-sample" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/addressbook-web-test" />
+            <option value="$PROJECT_DIR$/jenkins-sample" />
           </set>
         </option>
       </GradleProjectSettings>
