@@ -52,7 +52,7 @@ public class ApplicationManager {
     }else {
       DesiredCapabilities capabilites=new DesiredCapabilities();
       capabilites.setBrowserName(browser);
-      capabilites.setPlatform(Platform.fromString(System.getProperty("platform","win7")));
+     // capabilites.setPlatform(Platform.fromString(System.getProperty("platform","win7"))); Если хотим запустить на разных платформах то раскоментим тут и в build.gradle запускаем selenium hub и selenium node
       wd=new RemoteWebDriver(new URL(properties.getProperty("selenium.server")),capabilites);
 
 

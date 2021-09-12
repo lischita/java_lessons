@@ -5,6 +5,7 @@
     <test name = "Contacts">
         <classes>
             <class name = "ru.lischita.les.jenkins.tests.DBAddContactInGroupTest"/>
+            <class name = "ru.lischita.les.jenkins.tests.DBDeleteContactFromGroupTest"/>
         </classes>
     </test>
 </suite>
