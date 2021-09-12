@@ -20,7 +20,7 @@ public class DBDeleteContactFromGroupTest extends TestBase {
   DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
   Date date = new Date();
 
-  @BeforeMethod
+ /* @BeforeMethod
   public void ensurePreconditions() {
     if (app.db().groups().size() == 0) {
       app.goTo().groupPage();
@@ -38,7 +38,7 @@ public class DBDeleteContactFromGroupTest extends TestBase {
               .withWorkphone("495-123-45-67").withPhoto(new File("src/test/resources/photo_0.jpg")).inGroup(group));
 
     }
-  }
+  }*/
 
   @Test
   public void testDeleteContactFromGroup() throws Exception {
