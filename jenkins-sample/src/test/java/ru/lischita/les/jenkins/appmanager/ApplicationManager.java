@@ -53,7 +53,7 @@ public class ApplicationManager {
       DesiredCapabilities capabilites=new DesiredCapabilities();
       capabilites.setBrowserName(browser);
       //capabilites.setPlatform(Platform.fromString(System.getProperty("platform","win7")));
-      wd=new RemoteWebDriver(new URL(properties.getProperty("selenium.server")),capabilites);
+      wd = new RemoteWebDriver(new URL(properties.getProperty('selenium.server')), capabilities);
 
     }
    //wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
